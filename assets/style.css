@@ -1578,6 +1578,97 @@ section {
         padding: 25px;
     }
 }
+/* Mobile-specific fixes for home and about sections */
+@media (max-width: 768px) {
+    /* Fix for home section */
+    #home {
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        box-sizing: border-box;
+    }
+
+    .home-content {
+        padding: 0 15px;
+    }
+
+    .home-image {
+        margin-top: 30px;
+    }
+
+    /* Fix for about section */
+    #about {
+        padding: 60px 20px;
+        margin: 1rem;
+        min-height: auto;
+    }
+
+    .about-text {
+        padding: 0 10px;
+    }
+
+    /* Ensure content doesn't get cut off */
+    .container {
+        padding: 0;
+    }
+
+    section {
+        min-height: auto;
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra adjustments for very small screens */
+    #home {
+        padding-top: 80px;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .home-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    #about {
+        padding: 40px 15px;
+        margin: 0.5rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Ensure sections take full height when needed */
+#home, #about {
+    overflow: hidden;
+}
+
+/* Prevent navigation from covering content */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    nav {
+        padding: 0.5rem 0;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+}
 
 @media (max-width: 768px) {
     /* Small devices (landscape phones, 576px-768px) */
@@ -1731,3 +1822,4 @@ html, body {
         font-size: 1rem;
     }
 }
+
