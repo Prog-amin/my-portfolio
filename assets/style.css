@@ -1548,386 +1548,186 @@ section {
     font-size: 14px;
 }
 
-/* Enhanced Mobile Responsiveness - Add these to your existing CSS */
-
-/* Base responsive improvements */
-@media (max-width: 1024px) {
-    .container {
-        padding: 60px 15px;
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    /* Medium devices (tablets, 768px-992px) */
+    #home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+        height: auto;
+        gap: 2rem;
     }
-    
+
+    .home-image {
+        margin-left: 0;
+    }
+
     .profile-img {
-        margin-left: 50px;
         width: 250px;
         height: 250px;
+        margin-left: 0;
     }
-    
+
     .home-content h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
-    
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    .education-content, 
+    .experience-item {
+        padding: 25px;
     }
 }
 
-/* Tablet responsiveness */
 @media (max-width: 768px) {
-    /* Navigation improvements */
+    /* Small devices (landscape phones, 576px-768px) */
     .nav-container {
         padding: 0 1rem;
     }
-    
-    .logo {
-        width: 40px;
-        height: 40px;
+
+    .section-heading h2,
+    .section-headinge h2 {
+        font-size: 2rem;
     }
-    
-    /* Home section improvements */
-    #home {
-        padding-top: 120px;
-        gap: 2rem;
-    }
-    
+
     .home-content h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
+        font-size: 2.5rem;
     }
-    
+
     .home-content h2 {
         font-size: 1.3rem;
     }
-    
-    .home-content p {
-        font-size: 1rem;
-    }
-    
+
     .profile-img {
-        width: 200px;
-        height: 200px;
-        margin-left: 0;
+        width: 220px;
+        height: 220px;
     }
-    
-    /* CTA buttons responsive */
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .education-item {
+        margin-bottom: 40px;
+    }
+
+    .education-content {
+        width: 100%;
+        margin-left: 60px;
+    }
+
+    .education-item::after {
+        left: 30px;
+    }
+
+    .experience-item {
+        margin-left: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small devices (portrait phones, less than 576px) */
+    .container {
+        padding: 60px 15px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .home-content h1 {
+        font-size: 2.2rem;
+    }
+
     .cta-buttons {
         flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn {
-        width: 200px;
-        text-align: center;
-    }
-    
-    /* About section */
-    .contact-info {
-        grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
-    /* Projects section */
+
+    .btn {
+        width: 100%;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
-    
-    .project-card {
-        margin: 0 auto;
-        max-width: 400px;
-    }
-    
-    /* Certifications slider adjustment */
-    .certification-card {
-        min-width: 250px;
-    }
-    
-    /* Contact section */
-    #contact {
-        margin: 1rem;
-        padding: 3rem 1.5rem;
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-}
 
-/* Mobile phone responsiveness */
-@media (max-width: 480px) {
-    /* Typography scaling */
-    .section-heading h2 {
-        font-size: 1.8rem;
-        letter-spacing: 1px;
+    .education-timeline::before,
+    .education-timeline::after {
+        left: 20px;
     }
-    
-    .section-heading::after {
-        width: 60px;
-    }
-    
-    /* Home section mobile */
-    .home-content h1 {
-        font-size: 1.8rem;
-    }
-    
-    .home-content h2 {
-        font-size: 1.1rem;
-    }
-    
-    .home-content p {
-        font-size: 0.9rem;
-    }
-    
-    .profile-img {
-        width: 150px;
-        height: 150px;
-    }
-    
-    /* About section mobile */
-    .about-text p {
-        font-size: 1rem;
-    }
-    
-    /* Projects mobile */
-    .project-image {
-        height: 150px;
-        font-size: 2rem;
-    }
-    
-    .project-content {
-        padding: 1rem;
-    }
-    
-    .project-title {
-        font-size: 1.1rem;
-    }
-    
-    .project-buttons {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    /* Education timeline mobile adjustments */
+
     .education-content {
-        padding: 20px 15px;
+        margin-left: 50px;
     }
-    
-    .education-date {
-        font-size: 0.9rem;
+
+    .education-item::after {
+        left: 20px;
+        width: 18px;
+        height: 18px;
     }
-    
-    .education-degree {
-        font-size: 1.1rem;
-    }
-    
-    .education-school {
-        font-size: 1rem;
-    }
-    
-    /* Experience mobile */
+
     .experience-item {
-        padding: 20px 15px;
-        margin-left: 40px;
+        margin-left: 50px;
     }
-    
-    .experience-position {
-        font-size: 1.1rem;
-    }
-    
-    .experience-company {
-        font-size: 1rem;
-    }
-    
-    /* Certifications mobile */
-    .certification-card {
-        min-width: 200px;
-        padding: 1.5rem;
-    }
-    
-    .cert-image {
-        height: 120px;
-        font-size: 1.5rem;
-    }
-    
-    /* Contact mobile */
-    .contact-card {
-        padding: 1.5rem;
-    }
-    
-    .social-link {
-        width: 40px;
-        height: 40px;
-    }
-    
-    /* Scroll top button mobile */
-    .scroll-top {
-        bottom: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-}
 
-/* Extra small devices */
-@media (max-width: 360px) {
-    .container {
-        padding: 40px 10px;
+    .experience-item::before {
+        left: -37px;
+        width: 16px;
+        height: 16px;
     }
-    
-    .section-heading h2 {
-        font-size: 1.5rem;
-    }
-    
-    .home-content h1 {
-        font-size: 1.5rem;
-    }
-    
-    .home-content h2 {
-        font-size: 1rem;
-    }
-    
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .education-content,
-    .experience-item {
-        padding: 15px 10px;
-    }
-    
-    .certification-card {
-        min-width: 180px;
-        padding: 1rem;
-    }
-    
-    .project-card {
-        max-width: 300px;
-    }
-    
-    #contact {
-        padding: 2rem 1rem;
-    }
-}
 
-/* Landscape orientation for mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-    #home {
-        padding-top: 100px;
-        min-height: 100vh;
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
-    
-    .home-content h1 {
-        font-size: 2rem;
-    }
-    
-    .profile-img {
-        width: 180px;
-        height: 180px;
-    }
-}
 
-/* Fix for very wide screens */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1400px;
-    }
-    
-    .education-timeline,
-    .experience-timeline {
-        max-width: 1000px;
-    }
-}
-
-/* Improve button responsiveness */
-@media (max-width: 480px) {
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        width: auto;
-        min-width: 120px;
-    }
-    
-    .cta-buttons {
-        gap: 0.5rem;
-        flex-direction: row;
-        flex-wrap: wrap;
+    .social-links,
+    .social-links1 {
         justify-content: center;
     }
 }
 
-/* Enhanced mobile menu */
+/* Mobile menu toggle styles */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100vh;
+        top: 80px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 80px);
         background: rgba(10, 10, 10, 0.98);
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        transition: top 0.3s ease;
-        backdrop-filter: blur(10px);
-    }
-    
-    .nav-links.active {
-        top: 0;
-        display: flex;
-    }
-    
-    .nav-links a {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-    }
-}
-
-/* Improve touch targets for mobile */
-@media (max-width: 768px) {
-    .mobile-menu {
-        padding: 10px;
-        min-width: 44px;
-        min-height: 44px;
         justify-content: center;
+        gap: 2rem;
+        transition: all 0.5s ease;
     }
-    
-    .social-link,
-    .social-link1 {
-        min-width: 44px;
-        min-height: 44px;
-    }
-    
-    .btn {
-        min-height: 44px;
+
+    .nav-links.active {
+        left: 0;
     }
 }
 
-/* Fix overflow issues */
-@media (max-width: 768px) {
-    .animated-bg {
-        display: none; /* Hide particles on mobile for performance */
-    }
-    
-    .certifications-slider {
-        animation-duration: 30s; /* Slower on mobile */
-    }
+/* Prevent horizontal scrolling */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-/* Improve readability on small screens */
-@media (max-width: 480px) {
-    .education-description,
-    .experience-description {
-        font-size: 0.9rem;
-        line-height: 1.5;
+/* Adjust timeline for very small screens */
+@media (max-width: 400px) {
+    .education-content,
+    .experience-item {
+        padding: 20px 15px;
     }
-    
-    .tech-tag {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.6rem;
-    }
-    
-    .contact-card h4 {
+
+    .education-degree,
+    .experience-position {
         font-size: 1.1rem;
+    }
+
+    .education-school,
+    .experience-company {
+        font-size: 1rem;
     }
 }
