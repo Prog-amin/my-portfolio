@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Al Amin - Portfolio</title>
+
+        <link rel="stylesheet" href="assets/style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    </head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg" id="animatedBg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231a1a2e' stroke='%2300d4ff' stroke-width='1'/%3E%3Cpath d='M30,30 L50,65 L45,70 L25,35 Z' fill='%2300d4ff'/%3E%3Cpath d='M50,65 L70,30 L75,35 L55,70 Z' fill='%2300d4ff'/%3E%3Cpath d='M35,50 L65,50 L63,55 L37,55 Z' fill='%231a1a2e'/%3E%3C/svg%3E" alt="Dynamic AA Logo">
+              </div>
+              <!-- <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231a1a2e' stroke='%2300d4ff' stroke-width='1'/%3E%3Cpath d='M35,30 L50,70 L45,70 L30,30 Z' fill='%2300d4ff'/%3E%3Cpath d='M55,30 L70,70 L65,70 L50,30 Z' fill='%2300d4ff'/%3E%3Cpath d='M40,50 L60,50 L58,55 L42,55 Z' fill='%231a1a2e'/%3E%3C/svg%3E" alt="Asymmetric AA Logo">
+              </div> -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <h1>Hi There,<br>I'm <span style="color: #00d4ff;">AI Amin</span></h1>
+            <h2>I'm into <span class="typing-container"><span class="typed-text"></span><span class="cursor">&nbsp;</span></span></h2>
+            <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary">About Me</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <div class="social-links">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/al-amin23" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/Prog-amin" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+        </a>
+        
+        <!-- Twitter/X -->
+        <a href="https://twitter.com/your-handle" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+        </a>
+        
+        <!-- Facebook -->
+        <a href="https://facebook.com/your-profile" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>            </svg>
+        </a>
+        
+        <!-- YouTube -->
+        <a href="https://youtube.com/c/your-channel" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+        </a>
+        
+        <!-- Instagram -->
+        <a href="https://instagram.com/your-username" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+        </a>
+
+            </div>
+        </div> 
+        <div class="home-image">
+            <div class="profile-img">
+                <img src="assets/images/myimg2.jpg" alt="My Image">
+                <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%231a1a2e'/%3E%3Ctext x='150' y='150' font-size='80' text-anchor='middle' dy='.3em' fill='%2300d4ff'%3EAK%3C/text%3E%3C/svg%3E" alt="AI Amin K"> -->
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-heading text-center">
+            <h2>About Me</h2>
+        </div>        <div class="about-content">
+            <div class="about-text">
+                <p>I am an entry-level AI/ML Engineer with hands-on experience in machine learning, deep learning, and natural language processing (NLP). I have proven ability to build and deploy LLM-based solutions and AI-powered applications.</p>
+                <p>Eager to contribute to real-world NLP projects in a fast-paced, innovation-driven environment. I'm passionate about leveraging cutting-edge AI technologies to solve complex problems and create impactful solutions.</p>
+                <p>Based in Chennai, India, I'm constantly learning and staying updated with the latest developments in artificial intelligence and machine learning.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p>+91 93636 61594</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p>alamin03rockz@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <p>Chennai, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h2>Skills & Technologies</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-logo python">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">Python</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo sql">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            <path d="M4 6h16v2H4zm0 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">SQL</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo tensorflow">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M1.292 5.856L11.54 0v24l-4.095-2.378V7.603l-6.168 3.564.015-5.31zm21.708 5.307l-.02 5.309-6.168-3.564v14.018L12.54 24V0l10.46 5.856v5.307z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">TensorFlow</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo pytorch">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M12.005 0L4.952 7.053c-2.756 2.756-2.756 7.237 0 9.993 2.756 2.756 7.237 2.756 9.993 0l7.053-7.053L12.005 0zm6.468 9.521c.39.39.39 1.024 0 1.414l-6.468 6.468c-1.171 1.171-3.072 1.171-4.243 0-1.171-1.171-1.171-3.072 0-4.243l6.468-6.468c.39-.39 1.024-.39 1.414 0l2.829 2.829z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">PyTorch</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo huggingface">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.5c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5 1.5-.7 1.5-1.5-.7-1.5-1.5-1.5zm-8 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm16 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-8 2c-3.9 0-7 3.1-7 7 0 1.9.8 3.7 2.1 5 .2.2.5.3.8.1.3-.2.4-.6.2-.9-1-1-1.6-2.4-1.6-3.9 0-2.8 2.2-5 5-5s5 2.2 5 5c0 1.5-.6 2.9-1.6 3.9-.2.3-.1.7.2.9.3.2.6.1.8-.1 1.3-1.3 2.1-3.1 2.1-5 0-3.9-3.1-7-7-7z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">Hugging Face</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo fastapi">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">FastAPI</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo django">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.051 1.707.204V0zm0 9.143c-.535-.204-.956-.255-1.707-.255-2.549 0-4.024 1.478-4.024 4.003 0 2.474 1.424 3.850 4.024 3.850.701 0 1.172-.051 1.707-.153V9.143zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.013-3.211 2.7l-3.644-1.733c1.733-.687 2.574-1.401 3.109-2.447.586-1.07.764-2.319.764-5.937V6.06h3.899z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">Django</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo html">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">HTML & CSS</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo javascript">
+                        <svg viewBox="0 0 24 24" fill="black">
+                            <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo react">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.36-.034-.47 0-.92.014-1.36.034.45-.572.905-1.096 1.36-1.564zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.36.034.47 0 .92-.014 1.36-.034-.45.572-.905 1.096-1.36 1.564-.455-.468-.91-.992-1.36-1.564z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">React Native</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo c">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M16.5986 9.1299C15.6096 8.5606 14.3896 8.2399 12.9996 8.2399C9.6796 8.2399 6.9996 10.9199 6.9996 14.2399C6.9996 17.5599 9.6796 20.2399 12.9996 20.2399C14.3896 20.2399 15.6096 19.9199 16.5986 19.3499V21.2399C15.5496 21.7099 14.3496 21.9999 12.9996 21.9999C8.5796 21.9999 4.9996 18.4199 4.9996 13.9999C4.9996 9.5799 8.5796 5.9999 12.9996 5.9999C14.3496 5.9999 15.5496 6.2899 16.5986 6.7599V9.1299Z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">C Programming</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo dsa">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v12h16V6H4zm2 2h2v2H6V8zm0 4h2v2H6v-2zm4-4h8v2h-8V8zm0 4h8v2h-8v-2z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">Data Structures</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo colab">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M16.9414 4.9757a7.033 7.033 0 0 0-4.9308 2.0324 7.033 7.033 0 0 0-.1232 9.8068l2.395-2.395a3.6455 3.6455 0 0 1 5.1497-5.1478l2.397-2.3989a7.033 7.033 0 0 0-4.8877-1.9175zM7.07 4.9855a7.033 7.033 0 0 0-4.8878 1.9175l2.395 2.395A3.6434 3.6434 0 0 1 7.0183 9.293a3.6455 3.6455 0 0 1 2.5715 1.0608 3.6455 3.6455 0 0 1 -.0051 5.1497l2.395 2.395a7.033 7.033 0 0 0 .1232-9.8068 7.033 7.033 0 0 0-4.9308-2.0324z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">Google Colab</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo jupyter">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M8.5 6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM21 8.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-9.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                            <path d="M12 2.5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 12 2.5zM12 21A9 9 0 1 1 21 12a9 9 0 0 1-9 9z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">Jupyter</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo aws">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.112.208.24.44.384.68.144.248.304.536.48.864.08.152.12.304.12.456 0 .192-.08.384-.24.576l-.792.528c-.112.08-.224.12-.336.12-.144 0-.288-.072-.432-.216-.176-.192-.328-.384-.456-.576-.128-.192-.256-.416-.384-.68-.32.384-.7.688-1.144.912-.432.224-.92.336-1.464.336-.832 0-1.496-.24-1.992-.72-.496-.48-.744-1.12-.744-1.92 0-.848.296-1.536.888-2.048.592-.512 1.382-.768 2.36-.768.328 0 .664.024 1.016.08.352.056.712.136 1.088.24v-.8c0-.832-.172-1.408-.52-1.728-.344-.32-.928-.48-1.754-.48-.376 0-.76.048-1.152.144-.392.096-.776.224-1.152.384-.168.08-.296.12-.376.152-.08.032-.144.048-.184.048-.16 0-.24-.12-.24-.36v-.568c0-.184.024-.32.08-.408.056-.088.16-.176.320-.264.376-.192.832-.352 1.36-.48.528-.128 1.088-.192 1.68-.192 1.28 0 2.216.296 2.808.888.584.592.88 1.496.88 2.712v3.576zm-5.952 2.24c.32 0 .648-.056 1-.168.352-.112.664-.296.936-.544.16-.152.28-.32.36-.504.08-.184.12-.408.12-.672v-.64c-.296-.08-.608-.144-.936-.192-.328-.048-.648-.072-.96-.072-.688 0-1.192.136-1.512.408-.32.272-.48.672-.48 1.2 0 .496.128.864.384 1.128.256.272.624.408 1.088.408zm10.264.168c-.208 0-.352-.04-.432-.12-.08-.08-.152-.224-.216-.432l-2.424-7.992c-.064-.216-.096-.36-.096-.432 0-.176.088-.272.264-.272h1.08c.216 0 .36.04.44.12.08.08.144.224.208.432l1.736 6.856 1.608-6.856c.056-.216.12-.352.2-.432.08-.08.232-.12.456-.12h.88c.224 0 .376.04.456.12.08.08.152.224.2.432l1.624 6.944 1.784-6.944c.064-.216.136-.352.208-.432.08-.08.224-.12.44-.12h1.024c.176 0 .272.088.272.272 0 .056-.008.112-.024.176-.016.064-.048.152-.096.264l-2.48 7.992c-.064.216-.136.352-.216.432-.08.08-.224.12-.432.12h-.944c-.224 0-.376-.04-.456-.12-.08-.08-.152-.224-.2-.432l-1.592-6.632-1.576 6.632c-.056.216-.12.352-.2.432-.08.08-.232.12-.456.12h-.944zm15.68.28c-.608 0-1.216-.072-1.816-.216-.6-.144-1.064-.32-1.384-.528-.184-.12-.312-.248-.376-.384-.064-.136-.096-.272-.096-.408v-.592c0-.24.088-.36.256-.36.064 0 .128.016.192.048.064.032.16.08.288.136.376.168.784.304 1.224.408.44.104.872.152 1.296.152.688 0 1.224-.12 1.608-.368.384-.248.576-.592.576-1.032 0-.304-.096-.568-.288-.792-.192-.224-.552-.448-1.08-.672l-1.544-.48c-.784-.248-1.36-.616-1.728-1.104-.368-.488-.552-1.032-.552-1.632 0-.472.096-.888.288-1.248.192-.36.448-.672.768-.936.32-.264.704-.464 1.144-.6.44-.136.912-.208 1.416-.208.264 0 .536.016.808.056.272.04.528.096.768.168.232.072.448.152.648.248.2.096.36.2.48.312.088.08.152.168.192.264.04.096.064.2.064.312v.552c0 .24-.088.368-.256.368-.096 0-.24-.048-.432-.144-.656-.304-1.392-.456-2.208-.456-.632 0-1.128.104-1.488.312-.36.208-.544.528-.544.96 0 .304.112.568.336.792.224.224.632.456 1.224.696l1.512.48c.776.248 1.336.6 1.68 1.056.344.456.516.976.516 1.56 0 .48-.096.912-.288 1.296-.192.384-.464.712-.816.984-.352.272-.784.48-1.296.624-.528.144-1.12.216-1.776.216z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">AWS SageMaker</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo git">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">Git</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo github">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">GitHub</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo vscode">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">VS Code</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-logo chatgpt">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3567-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-name">ChatGPT</div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>Projects</h2>
+        </div>
+        <div class="projects-grid">
+
+            <!-- Health and Fitness App -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Health and Fitness app</h3>
+                    <p>An AI-powered personalized fitness and diet tracker that offers tailored workout plans, nutrition recommendations, and lifestyle tips. Tracks activities, sleep, and body metrics to promote overall wellness.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://example.com" class="btn btn-primary">Live Demo</a>
+                        <a href="https://github.com/Prog-amin" class="btn btn-secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RAG Agentic System -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">RAG Agentic System</h3>
+                    <p>An intelligent Retrieval-Augmented Generation (RAG) chatbot that allows users to search and interact with U.S. federal documents. Delivers accurate, up-to-date legal or policy information through natural conversation.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Async Programming</span>
+                        <span class="tech-tag">LLM</span>
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://drive.google.com/file/d/1lGVJQuSVKAjrl2iE5mOeh-3wNOAfOwmp/view?usp=drivesdk" class="btn btn-primary">Live Demo</a>
+                        <a href="https://huggingface.co/spaces/Prog-amin" class="btn btn-secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Booking Management -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Hotel Booking Management System</h3>
+                    <p>A full-stack hotel reservation platform with features for room booking, availability checking, payment integration, and user/admin dashboards. Enhances user experience with real-time booking updates and secure operations.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://example.com" class="btn btn-primary">Live Demo</a>
+                        <a href="https://github.com/Prog-amin" class="btn btn-secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-id-card"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Portfolio</h3>
+                    <p>A responsive and interactive web portfolio showcasing projects, skills, experience, and contact info. Built with smooth animations and a modern UI to enhance personal branding and visibility.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://your-portfolio.site" class="btn btn-primary">Play Now</a>
+                        <a href="https://github.com/Prog-amin/my-portfolio" class="btn btn-secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mini Games -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Mini games</h3>
+                    <p>A set of fun browser-based games with interactive UI, responsive controls, and smooth animations. Designed to demonstrate JavaScript logic and engaging UX.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://mini-games.vercel.app" class="btn btn-primary">Play Now</a>
+                        <a href="https://github.com/yourusername/mini-games" class="btn btn-secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Education Section -->
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 0.5s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 2.5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 0.8s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 1.8s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 2.8s;"></div>
+    </div>
+    
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="section-headinge text-center">
+            <h2>Education</h2>
+        </div>
+        <div class="container">
+            <div class="education-timeline">
+                <!-- Bachelor's Degree -->
+                <div class="education-item">
+                    <div class="education-content">
+                        <div class="education-date">2021 - 2022</div>
+                        <div class="education-degree">Accounting</div>
+                        <div class="education-school">Anjuman Matr. Hr. Sec. School</div>
+                        <div class="education-location">Chennai, India</div>
+                        <div class="education-description">
+                            Studied core subjects in commerce including financial accounting, economics, and business mathematics. Developed a strong foundation in analytical and financial principles.<br>
+                            <strong>CGPA:</strong> 9.4
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+
+
+                <!-- Master's Degree -->
+                <div class="education-item">
+                    <div class="education-content">
+                        <div class="education-date">2022 - 2025</div>
+                        <div class="education-degree">Bachelor of Computer Application</div>
+                        <div class="education-school">Loyola College</div>
+                        <div class="education-location">Chennai, India</div>
+                        <div class="education-description">
+                            Comprehensive foundation in computer science fundamentals including programming languages, database systems, and software development methodologies. Graduated with honors.<br>  
+                            <strong>CGPA:</strong> 8.0
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+<!-- Experience Section -->
+<section id="experience" class="experience">
+    <div class="section-headinge">
+        <h2>Experience</h2>
+    </div>
+    <div class="container">
+        <div class="experience-timeline">
+            <!-- Internship 1 -->
+            <div class="experience-item">
+                <div class="experience-date">2024 – 2025</div>
+                <div class="experience-position">Natural Language Processing Intern</div>
+                <div class="experience-company">Pantech e Learning Pvt. Ltd.</div>
+                <div class="experience-location">Chennai, India</div>
+                <div class="experience-description">
+                    Fine-tuned large language models (LLMs) for domain-specific tasks.<br>
+                    Deployed NLP models using AWS cloud services (EC2, Lambda).<br>
+                    Engineered effective prompts to enhance LLM performance.
+                </div>
+            </div>
+
+            <!-- Internship 2 -->
+            <div class="experience-item">
+                <div class="experience-date">2023 – 2024</div>
+                <div class="experience-position">Digital Marketing & Backend Support</div>
+                <div class="experience-company">Chennai Chairs</div>
+                <div class="experience-location">Chennai, India</div>
+                <div class="experience-description">
+                    Managed social media campaigns to boost viewer engagement.<br>
+                    Optimized Google Ads to improve online reach.<br>
+                    Maintained and updated backend tasks using nopCommerce.
+                </div>
+            </div>
+
+            <!-- Future Job Seeking -->
+            <div class="experience-item">
+                <div class="experience-date">2025 – Present</div>
+                <div class="experience-position">AI/ML Engineer (Job Seeker)</div>
+                <div class="experience-company">Seeking Opportunities</div>
+                <div class="experience-location">Open to Remote or On-site</div>
+                <div class="experience-description">
+                    Actively looking for roles to apply machine learning and NLP skills.<br>
+                    Interested in projects involving LLM fine-tuning, deployment, and AI-driven solutions.<br>
+                    Committed to continuous learning and contributing to impactful AI innovations.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="certifications">
+    <div class="section-heading">
+        <h2>Certifications</h2>
+    </div>
+    <div class="certifications-slider">
+        <div class="certification-card">
+            <a href="https://www.coursera.org/learn/generative-ai-with-llms" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-robot"></i> <!-- AI/LLM icon -->
+                </div>
+                <h4>Generative AI with Large Language Models</h4>
+                <p class="provider">AWS & DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://www.udemy.com/course/llm-engineering/" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-cogs"></i> <!-- Engineering/Systems icon -->
+                </div>
+                <h4>LLM Engineering: Master AI, Large Language Models & Agents</h4>
+                <p class="provider">Udemy</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://coursera.org/share/d78b056bd257d785ae445e85fa46db2f" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-comments"></i> <!-- NLP/Conversation icon -->
+                </div>
+                <h4>Natural Language Processing Specialization</h4>
+                <p class="provider">DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://coursera.org/share/bf333ddaade833db170379d193901994" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-brain"></i> <!-- Deep Learning icon -->
+                </div>
+                <h4>Deep Learning Specialization</h4>
+                <p class="provider">DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://coursera.org/share/6b840e127185f8b0702bbf009a00ab14" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-microchip"></i> <!-- Machine Learning icon -->
+                </div>
+                <h4>Machine Learning Specialization</h4>
+                <p class="provider">By Andrew Ng - DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://www.udemy.com/certificate/UC-28912c15-6f17-4e4e-b711-9ffbe95dbf40/" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-code"></i> <!-- Coding/Algorithm icon -->
+                </div>
+                <h4>Master the Coding Interview: Data Structures + Algorithms</h4>
+                <p class="provider">Udemy</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-heading">
+            <h2>Gen In Touch</h2>
+        </div>        <p>I'm always open to discussing new opportunities and interesting projects. Let's connect!</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h4>📧 Email</h4>
+                <p>alamin03rockz@gmail.com</p>
+            </div>
+            <div class="contact-card">
+                <h4>📱 Phone</h4>
+                <p>+91 93636 61594</p>
+            </div>
+            <div class="contact-card">
+                <h4>📍 Location</h4>
+                <p>Chennai, Tamil Nadu, India</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Copyright Section -->
+<footer class="copyright">
+    <p>&copy; 2025 Al Amin. Made with coffee and code ☕</p>
+</footer>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Animated Background Particles
+        function createParticles() {
+            const bg = document.getElementById('animatedBg');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                bg.appendChild(particle);
+            }
+        }
+
+        
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar Background on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+        
+        // Demo modal functionality
+        function showDemo(projectType) {
+            const modal = document.getElementById('demoModal');
+            const title = document.getElementById('demoTitle');
+            const content = document.getElementById('demoContent');
+            
+            const demoData = {
+                'health': {
+                    title: 'E-Commerce Platform Demo',
+                    content: 'Interactive demo of the e-commerce platform showcasing user registration, product browsing, cart functionality, and secure checkout process.'
+                },
+                'agent': {
+                    title: 'Mobile App Design Demo',
+                    content: 'Prototype demonstration of the mobile app design featuring smooth animations, intuitive navigation, and responsive user interface elements.'
+                },
+                'restaurant': {
+                    title: 'Analytics Dashboard Demo',
+                    content: 'Live demonstration of the analytics dashboard with real-time data visualization, interactive charts, and comprehensive reporting features.'
+                },
+                'portfolio': {
+                    title: 'Corporate Website Demo',
+                    content: 'Walkthrough of the corporate website showcasing responsive design, content management capabilities, and SEO optimization features.'
+                },
+                'games': {
+                    title: 'Interactive Game Demo',
+                    content: 'Gameplay demonstration of the browser-based interactive game featuring engaging mechanics and responsive controls.'
+                },
+            };
+
+            const demo = demoData[projectType];
+            title.textContent = demo.title;
+            content.innerHTML = `
+                <p style="color: #e0e0e0; margin-bottom: 2rem;">${demo.content}</p>
+                <div style="width: 100%; height: 300px; background: linear-gradient(45deg, #00d4ff, #ff6b6b); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; cursor: pointer;" onclick="playDemo()">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <p style="color: #00d4ff; margin-top: 1rem; font-size: 0.9rem;">Click to play demo video</p>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function playDemo() {
+            alert('Demo video would play here. This is a placeholder for the actual video content.');
+        }
+
+        // Close modal functionality
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('demoModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('demoModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // // Add animation classes when elements come into view
+        // const animateOnScroll = new IntersectionObserver((entries) => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             entry.target.style.opacity = '1';
+        //             entry.target.style.transform = 'translateY(0)';
+        //         }
+        //     });
+        // }, { threshold: 0.1 });
+
+        // // Apply animation to sections
+        // document.querySelectorAll('.section').forEach(section => {
+        //     section.style.opacity = '0';
+        //     section.style.transform = 'translateY(50px)';
+        //     section.style.transition = 'all 0.8s ease';
+        //     animateOnScroll.observe(section);
+        // });
+
+        // Pause certifications slider on hover
+        const slider = document.querySelector('.certifications-slider');
+        slider.addEventListener('mouseenter', () => {
+            slider.style.animationPlayState = 'paused';
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            slider.style.animationPlayState = 'running';
+        });
+        
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            createParticles();
+        });
+
+
+        // Add scroll reveal animation
+        const revealElements = document.querySelectorAll('section');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        revealElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'all 0.6s ease';
+            revealObserver.observe(el);
+        });
+        
+    </script>
+
+
+
+
+    <script>
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', () => {
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                // Current index of word
+                const current = this.wordIndex % this.words.length;
+                // Get full text of current word
+                const fullTxt = this.words[current];
+
+                // Check if deleting
+                if (this.isDeleting) {
+                    // Remove char
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    // Add char
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                // Insert txt into element
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                // Initial Type Speed
+                let typeSpeed = 100;
+
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                // If word is complete
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    // Make pause at end
+                    typeSpeed = this.wait;
+                    // Set delete to true
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    // Move to next word
+                    this.wordIndex++;
+                    // Pause before start typing
+                    typeSpeed = 500;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        // Init On DOM Load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Init App
+        function init() {
+            const txtElement = document.querySelector('.typed-text');
+            const words = ['Machine Learning', 'Artificial Intelligence', 'Data Science', 'Web Development', 'LLMs'];
+            const wait = 2000;
+            // Init TypeWriter
+            new TypeWriter(txtElement, words, wait);
+        }
+    </script>
+        <!-- Demo Modal -->
+        <div id="demoModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);">
+            <div class="modal-content" style="position: relative; margin: 5% auto; width: 80%; max-width: 800px; background: #1a1a2e; border-radius: 15px; padding: 2rem;">
+                <span class="close" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+                <h2 id="demoTitle" style="color: #00d4ff; margin-bottom: 1rem;">Project Demo</h2>
+                <div id="demoContent" style="text-align: center;">
+                    <p style="color: #e0e0e0; margin-bottom: 2rem;">Demo video will be displayed here</p>
+                    <div style="width: 100%; height: 300px; background: linear-gradient(45deg, #00d4ff, #ff6b6b); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>

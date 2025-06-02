@@ -1,0 +1,566 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;  
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.08"/><circle cx="20" cy="80" r="0.5" fill="white" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 2rem;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        h2::after {
+            content: '💱';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(-70%); }
+        }
+
+        form {
+            margin: 0;
+        }
+
+        .amount {
+            margin-bottom: 2rem;
+        }
+
+        .amount p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .amount input {
+            width: 100%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            outline: none;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+            height: 3.5rem;
+            padding: 0 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .amount input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .amount input:focus {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+
+        .from, .to {
+            flex: 1;
+        }
+
+        .from p, .to p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .select-container {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 1rem;
+            gap: 0.8rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .select-container:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .select-container img {
+            width: 2.5rem;
+            height: 2rem;
+            border-radius: 0.3rem;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .select-container select {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .select-container select option {
+            background: #333;
+            color: #fff;
+            padding: 0.5rem;
+        }
+
+        .swap-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 0.5rem;
+        }
+
+        .swap-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: rotate(180deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .swap-btn i {
+            font-size: 1.2rem;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .msg {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .msg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.8s;
+        }
+
+        .msg.updated::before {
+            left: 100%;
+        }
+
+        .convert-btn {
+            width: 100%;
+            height: 3.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1rem;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .convert-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .convert-btn:hover::before {
+            left: 100%;
+        }
+
+        .convert-btn:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .convert-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top: 2px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .dropdown {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .swap-btn {
+                transform: rotate(90deg);
+                align-self: center;
+            }
+            
+            .swap-btn:hover {
+                transform: rotate(270deg) scale(1.1);
+            }
+        }
+
+        /* Success/Error States */
+        .msg.success {
+            background: rgba(34, 197, 94, 0.2);
+            border-color: rgba(34, 197, 94, 0.4);
+            color: #fff;
+        }
+
+        .msg.error {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.4);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Currency Converter</h2>
+        <form>
+            <div class="amount">
+                <p>💰 Enter Amount</p>
+                <input value="1" type="text" placeholder="Enter amount..." />
+            </div> 
+                
+            <div class="dropdown">
+                <div class="from">
+                    <p>📤 From</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="US Flag" />
+                        <select name="from"></select>
+                    </div>
+                </div>
+                
+                <div class="swap-btn" id="swap-btn">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </div>
+                
+                <div class="to">
+                    <p>📥 To</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/IN/flat/64.png" alt="IN Flag" />
+                        <select name="to"></select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="msg" id="result-msg">💱 1 USD = 80 INR</div>
+            <button type="button" class="convert-btn" id="convert-btn">
+                <span>Get Exchange Rate</span>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Currency list - simplified version for demo
+        const countryList = {
+            "USD": "US", "EUR": "EU", "GBP": "GB", "JPY": "JP", "AUD": "AU",
+            "CAD": "CA", "CHF": "CH", "CNY": "CN", "INR": "IN", "KRW": "KR",
+            "RUB": "RU", "BRL": "BR", "ZAR": "ZA", "MXN": "MX", "SGD": "SG",
+            "HKD": "HK", "NOK": "NO", "SEK": "SE", "DKK": "DK", "PLN": "PL",
+            "CZK": "CZ", "HUF": "HU", "RON": "RO", "BGN": "BG", "HRK": "HR",
+            "TRY": "TR", "ILS": "IL", "AED": "AE", "SAR": "SA", "QAR": "QA",
+            "KWD": "KW", "BHD": "BH", "OMR": "OM", "JOD": "JO", "LBP": "LB",
+            "EGP": "EG", "MAD": "MA", "DZD": "DZ", "TND": "TN", "LYD": "LY",
+            "NGN": "NG", "GHS": "GH", "KES": "KE", "UGX": "UG", "TZS": "TZ",
+            "ETB": "ET", "ZMW": "ZM", "BWP": "BW", "NAD": "NA", "SZL": "SZ",
+            "LSL": "LS", "MWK": "MW", "MZN": "MZ", "AOA": "AO", "XAF": "CM",
+            "XOF": "SN", "CDF": "CD", "RWF": "RW", "BIF": "BI", "KMF": "KM",
+            "MGA": "MG", "MUR": "MU", "SCR": "SC", "MVR": "MV", "NPR": "NP",
+            "LKR": "LK", "BDT": "BD", "BTN": "BT", "MMK": "MM", "LAK": "LA",
+            "KHR": "KH", "VND": "VN", "THB": "TH", "MYR": "MY", "IDR": "ID",
+            "PHP": "PH", "TWD": "TW", "HKD": "HK", "MOP": "MO", "BND": "BN",
+            "FJD": "FJ", "TOP": "TO", "WST": "WS", "VUV": "VU", "PGK": "PG",
+            "SBD": "SB", "NCX": "NC", "XPF": "PF", "NZD": "NZ"
+        };
+
+        // Select elements
+        const dropdowns = document.querySelectorAll(".dropdown select"); 
+        const btn = document.querySelector("#convert-btn");
+        const fromCurr = document.querySelector(".from select");
+        const toCurr = document.querySelector(".to select");
+        const msg = document.querySelector("#result-msg");
+        const swapBtn = document.querySelector("#swap-btn");
+
+        // Populate dropdowns
+        for (let select of dropdowns) {
+            for (let currCode in countryList) {
+                let newOption = document.createElement("option");
+                newOption.innerText = currCode;
+                newOption.value = currCode;
+
+                if (select.name === "from" && currCode === "USD") {
+                    newOption.selected = "selected";
+                } else if (select.name === "to" && currCode === "INR") {
+                    newOption.selected = "selected";
+                }
+                
+                select.append(newOption);
+            }
+
+            // Update flag function
+            const updateFlag = (element) => {
+                let currCode = element.value;
+                let countryCode = countryList[currCode];
+
+                if (countryCode) {
+                    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+                    let img = element.parentElement.querySelector("img");
+                    img.src = newSrc;
+                    img.alt = `${countryCode} Flag`;
+                }
+            };
+
+            select.addEventListener("change", (evt) => {
+                updateFlag(evt.target);
+            });
+        }
+
+        // Swap currencies function
+        swapBtn.addEventListener("click", () => {
+            const fromValue = fromCurr.value;
+            const toValue = toCurr.value;
+            
+            fromCurr.value = toValue;
+            toCurr.value = fromValue;
+            
+            // Update flags
+            updateFlag(fromCurr);
+            updateFlag(toCurr);
+            
+            // Update exchange rate
+            updateExchangeRate();
+        });
+
+        // Update flag function (moved outside to be accessible)
+        const updateFlag = (element) => {
+            let currCode = element.value;
+            let countryCode = countryList[currCode];
+
+            if (countryCode) {
+                let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+                let img = element.parentElement.querySelector("img");
+                img.src = newSrc;
+                img.alt = `${countryCode} Flag`;
+            }
+        };
+
+        // Update exchange rate function
+        const updateExchangeRate = async () => {
+            let amount = document.querySelector(".amount input");
+            let amtVal = parseFloat(amount.value);
+
+            if (isNaN(amtVal) || amtVal < 1) {
+                amtVal = 1;
+                amount.value = "1";
+            }
+
+            // Add loading state
+            btn.classList.add('loading');
+            btn.innerHTML = '';
+            msg.className = 'msg';
+            msg.innerText = '⏳ Converting...';
+
+            const BASE_URL = 'https://api.exchangerate-api.com/v4/latest';
+            const URL = `${BASE_URL}/${fromCurr.value}`;
+
+            try {
+                let response = await fetch(URL);
+                let data = await response.json();
+
+                if (!data.rates || !data.rates[toCurr.value]) {
+                    throw new Error("Failed to fetch exchange rates");
+                }
+
+                let rate = data.rates[toCurr.value];
+                let finalAmount = (amtVal * rate).toFixed(2);
+
+                // Success state
+                msg.className = 'msg success updated';
+                msg.innerText = `💰 ${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+                
+                // Trigger animation
+                setTimeout(() => {
+                    msg.classList.remove('updated');
+                }, 100);
+
+            } catch (error) {
+                // Error state
+                msg.className = 'msg error';
+                msg.innerText = `❌ Error: ${error.message}`;
+            } finally {
+                // Remove loading state
+                btn.classList.remove('loading');
+                btn.innerHTML = '<span>Get Exchange Rate</span>';
+            }
+        };
+
+        // Event listeners
+        btn.addEventListener("click", (evt) => {
+            evt.preventDefault();
+            updateExchangeRate();
+        });
+
+        // Enter key support
+        document.querySelector(".amount input").addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                updateExchangeRate();
+            }
+        });
+
+        // Initial load
+        window.addEventListener("load", () => {
+            updateExchangeRate();
+        });
+    </script>
+</body>
+</html>

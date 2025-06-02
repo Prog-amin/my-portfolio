@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 4px 8px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.2); }
+            to { text-shadow: 2px 4px 8px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.4); }
+        }
+
+        .game-board {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .choice {
+            position: relative;
+            height: 180px;
+            width: 180px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 3px solid rgba(255,255,255,0.3);
+            overflow: hidden;
+        }
+
+        .choice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .choice:hover::before {
+            transform: translateX(100%);
+        }
+
+        .choice:hover {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-color: #fff;
+        }
+
+        .choice:active {
+            transform: scale(0.95);
+        }
+
+        .choice-emoji {
+            font-size: 5rem;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+            transition: all 0.3s ease;
+        }
+
+        .choice:hover .choice-emoji {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .choice-label {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 3rem 0;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .score-section {
+            text-align: center;
+            color: #fff;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .score-label {
+            font-size: 1.5rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .vs-divider {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .msg-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        #msg {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: #fff;
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .battle-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            min-height: 120px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .battle-section.active {
+            opacity: 1;
+        }
+
+        .battle-choice {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+
+        .battle-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: battlePulse 0.6s ease-in-out;
+        }
+
+        @keyframes battlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .battle-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .reset-btn {
+            display: block;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(238, 90, 82, 0.3);
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(238, 90, 82, 0.4);
+        }
+
+        /* Animations for score updates */
+        .score-update {
+            animation: scoreUpdate 0.6s ease-in-out;
+        }
+
+        @keyframes scoreUpdate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); color: #ffd700; }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .choices { gap: 1rem; }
+            .choice { height: 140px; width: 140px; }
+            .choice-emoji { font-size: 3.5rem; }
+            .choice-label { font-size: 1rem; }
+            .score-number { font-size: 3rem; }
+            .game-board { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Rock Paper Scissors 🎮</h1>
+        
+        <div class="game-board">
+            <div class="choices">
+                <div class="choice" id="rock">
+                    <div class="choice-emoji">🪨</div>
+                    <div class="choice-label">ROCK</div>
+                </div>
+                <div class="choice" id="paper">
+                    <div class="choice-emoji">📄</div>
+                    <div class="choice-label">PAPER</div>
+                </div>
+                <div class="choice" id="scissors">
+                    <div class="choice-emoji">✂️</div>
+                    <div class="choice-label">SCISSORS</div>
+                </div>
+            </div>
+
+            <div class="score-board">
+                <div class="score-section">
+                    <div class="score-number" id="user-score">0</div>
+                    <div class="score-label">YOU</div>
+                </div>
+                <div class="vs-divider">VS</div>
+                <div class="score-section">
+                    <div class="score-number" id="comp-score">0</div>
+                    <div class="score-label">COMPUTER</div>
+                </div>
+            </div>
+
+            <div class="battle-section" id="battle-section">
+                <div class="battle-choice">
+                    <div class="battle-emoji" id="user-choice-display">❓</div>
+                    <div class="battle-label">Your Choice</div>
+                </div>
+                <div class="battle-choice">
+                    <div class="battle-emoji" id="comp-choice-display">❓</div>
+                    <div class="battle-label">Computer Choice</div>
+                </div>
+            </div>
+
+            <div class="msg-container">
+                <div id="msg">Choose your weapon!</div>
+            </div>
+
+            <button class="reset-btn" onclick="resetGame()">🔄 Reset Game</button>
+        </div>
+    </div>
+
+    <script>
+        let userScore = 0;
+        let compScore = 0;
+
+        const choices = document.querySelectorAll(".choice");
+        const msg = document.querySelector("#msg");
+        const userScorePara = document.querySelector("#user-score");
+        const compScorePara = document.querySelector("#comp-score");
+        const battleSection = document.querySelector("#battle-section");
+        const userChoiceDisplay = document.querySelector("#user-choice-display");
+        const compChoiceDisplay = document.querySelector("#comp-choice-display");
+
+        const choiceEmojis = {
+            rock: "🪨",
+            paper: "📄",
+            scissors: "✂️"
+        };
+
+        const genCompChoice = () => {
+            const options = ["rock", "paper", "scissors"];
+            const randIdx = Math.floor(Math.random() * 3);
+            return options[randIdx];
+        };
+
+        const updateBattleDisplay = (userChoice, compChoice) => {
+            userChoiceDisplay.textContent = choiceEmojis[userChoice];
+            compChoiceDisplay.textContent = choiceEmojis[compChoice];
+            battleSection.classList.add('active');
+        };
+
+        const updateScore = (isUser) => {
+            const scoreElement = isUser ? userScorePara : compScorePara;
+            scoreElement.classList.add('score-update');
+            setTimeout(() => {
+                scoreElement.classList.remove('score-update');
+            }, 600);
+        };
+
+        const drawGame = () => {
+            msg.textContent = "It's a tie! 🤝 Great minds think alike!";
+            msg.style.background = "linear-gradient(45deg, #ffa726, #ff9800)";
+            msg.style.boxShadow = "0 8px 25px rgba(255, 167, 38, 0.3)";
+        };
+
+        const showWinner = (userWin, userChoice, compChoice) => {
+            if (userWin) {
+                userScore++;
+                userScorePara.textContent = userScore;
+                updateScore(true);
+                msg.textContent = `🎉 You win! ${choiceEmojis[userChoice]} beats ${choiceEmojis[compChoice]}`;
+                msg.style.background = "linear-gradient(45deg, #4caf50, #45a049)";
+                msg.style.boxShadow = "0 8px 25px rgba(76, 175, 80, 0.3)";
+            } else {
+                compScore++;
+                compScorePara.textContent = compScore;
+                updateScore(false);
+                msg.textContent = `😔 You lost! ${choiceEmojis[compChoice]} beats ${choiceEmojis[userChoice]}`;
+                msg.style.background = "linear-gradient(45deg, #f44336, #d32f2f)";
+                msg.style.boxShadow = "0 8px 25px rgba(244, 67, 54, 0.3)";
+            }
+        };
+
+        const playGame = (userChoice) => {
+            const compChoice = genCompChoice();
+            
+            // Show battle display
+            updateBattleDisplay(userChoice, compChoice);
+
+            // Add a small delay for dramatic effect
+            setTimeout(() => {
+                if (userChoice === compChoice) {
+                    drawGame();
+                } else {
+                    let userWin = true;
+                    if (userChoice === "rock") {
+                        userWin = compChoice === "paper" ? false : true;
+                    } else if (userChoice === "paper") {
+                        userWin = compChoice === "scissors" ? false : true;
+                    } else {
+                        userWin = compChoice === "rock" ? false : true;
+                    }
+                    showWinner(userWin, userChoice, compChoice);
+                }
+            }, 500);
+        };
+
+        const resetGame = () => {
+            userScore = 0;
+            compScore = 0;
+            userScorePara.textContent = "0";
+            compScorePara.textContent = "0";
+            msg.textContent = "Choose your weapon!";
+            msg.style.background = "linear-gradient(45deg, #4facfe 0%, #00f2fe 100%)";
+            msg.style.boxShadow = "0 8px 25px rgba(79, 172, 254, 0.3)";
+            battleSection.classList.remove('active');
+            userChoiceDisplay.textContent = "❓";
+            compChoiceDisplay.textContent = "❓";
+        };
+
+        choices.forEach((choice) => {
+            choice.addEventListener("click", () => {
+                const userChoice = choice.getAttribute("id");
+                playGame(userChoice);
+            });
+        });
+
+        // Add keyboard support
+        document.addEventListener('keydown', (e) => {
+            switch(e.key.toLowerCase()) {
+                case 'r':
+                    playGame('rock');
+                    break;
+                case 'p':
+                    playGame('paper');
+                    break;
+                case 's':
+                    playGame('scissors');
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

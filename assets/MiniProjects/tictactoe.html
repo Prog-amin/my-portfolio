@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        *{
+            margin: 0; 
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background-color: #548687;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin: 20px 20px;
+            font-size: 2.5rem;
+            color: #191913;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+        
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffc7;
+            color: #b0413e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        .status {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 1vh;
+            background-color: #191913;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Tic Tac Toe</h1>
+        <div class="board" id="board"></div>
+        <div class="status" id="status"></div>
+        <button id="reset">Reset Game</button>
+    </div>
+
+<script>
+    const boardElement = document.getElementById('board');
+    const statusElement = document.getElementById('status');
+    const resetButton = document.getElementById('reset');
+
+    let currentPlayer = 'X';
+    let gameBoard = ['', '', '', '', '', '', '', '', ''];
+    let gameActive = true;
+
+    const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    // Initialize board
+    function createBoard() {
+        boardElement.innerHTML = '';
+        gameBoard.forEach((cell, index) => {
+            const cellElement = document.createElement('div');
+            cellElement.classList.add('cell');
+            cellElement.dataset.index = index;
+            cellElement.addEventListener('click', handleCellClick);
+            boardElement.appendChild(cellElement);
+        });
+    }
+
+    // Handle cell click
+    function handleCellClick(event) {
+        const cellIndex = event.target.dataset.index;
+
+        if (gameBoard[cellIndex] === '' && gameActive) {
+            gameBoard[cellIndex] = currentPlayer;
+            event.target.textContent = currentPlayer;
+            checkWinner();
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            updateStatus();
+        }
+    }
+
+    // Check for a winner or draw
+    function checkWinner() {
+        let roundWon = false;
+
+        for (let i = 0; i < winningCombinations.length; i++) {
+            const [a, b, c] = winningCombinations[i];
+            if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+                roundWon = true;
+                break;
+            }
+        }
+
+        if (roundWon) {
+            gameActive = false;
+            statusElement.textContent = `Player ${currentPlayer} wins!`;
+            return;
+        }
+
+        if (!gameBoard.includes('')) {
+            gameActive = false;
+            statusElement.textContent = 'Draw!';
+        }
+    }
+
+    // Update status message
+    function updateStatus() {
+        if (gameActive) {
+            statusElement.textContent = `Player ${currentPlayer}'s turn`;
+        }
+    }
+
+    // Reset the game
+    resetButton.addEventListener('click', () => {
+        currentPlayer = 'X';
+        gameBoard = ['', '', '', '', '', '', '', '', ''];
+        gameActive = true;
+        createBoard();
+        updateStatus();
+    });
+
+    // Initial setup
+    createBoard();
+    updateStatus();
+
+</script>
+</body>
+</html>
