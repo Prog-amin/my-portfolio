@@ -1104,7 +1104,7 @@ section {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .container {
         padding: 40px 15px;
     }
@@ -1189,7 +1189,7 @@ section {
         left: -29px;
         width: 25px;
     }
-}
+} */
 /* Certifications Section */
 #certifications {
     padding: 100px 0;
@@ -1430,7 +1430,7 @@ section {
     flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .social-links1 {
         justify-content: center;
         gap: 0.8rem;
@@ -1446,7 +1446,7 @@ section {
         width: 40px;
         height: 40px;
     }
-}
+} */
 
 .social-link1 {
     width: 50px;
