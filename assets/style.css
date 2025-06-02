@@ -1548,21 +1548,54 @@ section {
     font-size: 14px;
 }
 
-/* Additional Responsive Design Rules */
+/* Enhanced Mobile Responsiveness - Add these to your existing CSS */
 
-/* Extra Small Devices (phones, 480px and down) */
-@media (max-width: 480px) {
+/* Base responsive improvements */
+@media (max-width: 1024px) {
     .container {
         padding: 60px 15px;
     }
     
+    .profile-img {
+        margin-left: 50px;
+        width: 250px;
+        height: 250px;
+    }
+    
     .home-content h1 {
-        font-size: 2rem;
+        font-size: 3rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+    /* Navigation improvements */
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Home section improvements */
+    #home {
+        padding-top: 120px;
+        gap: 2rem;
+    }
+    
+    .home-content h1 {
+        font-size: 2.2rem;
         line-height: 1.2;
     }
     
     .home-content h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     
     .home-content p {
@@ -1575,195 +1608,326 @@ section {
         margin-left: 0;
     }
     
+    /* CTA buttons responsive */
     .cta-buttons {
         flex-direction: column;
-        gap: 0.8rem;
+        align-items: center;
     }
     
     .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        width: 200px;
+        text-align: center;
     }
     
+    /* About section */
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Projects section */
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
     .project-card {
-        margin: 0 10px;
+        margin: 0 auto;
+        max-width: 400px;
     }
     
-    .contact-grid {
-        gap: 1.5rem;
+    /* Certifications slider adjustment */
+    .certification-card {
+        min-width: 250px;
+    }
+    
+    /* Contact section */
+    #contact {
+        margin: 1rem;
+        padding: 3rem 1.5rem;
     }
     
     .social-links {
         justify-content: center;
-        gap: 0.8rem;
+    }
+}
+
+/* Mobile phone responsiveness */
+@media (max-width: 480px) {
+    /* Typography scaling */
+    .section-heading h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .section-heading::after {
+        width: 60px;
+    }
+    
+    /* Home section mobile */
+    .home-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .home-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    .home-content p {
+        font-size: 0.9rem;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* About section mobile */
+    .about-text p {
+        font-size: 1rem;
+    }
+    
+    /* Projects mobile */
+    .project-image {
+        height: 150px;
+        font-size: 2rem;
+    }
+    
+    .project-content {
+        padding: 1rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    /* Education timeline mobile adjustments */
+    .education-content {
+        padding: 20px 15px;
+    }
+    
+    .education-date {
+        font-size: 0.9rem;
+    }
+    
+    .education-degree {
+        font-size: 1.1rem;
+    }
+    
+    .education-school {
+        font-size: 1rem;
+    }
+    
+    /* Experience mobile */
+    .experience-item {
+        padding: 20px 15px;
+        margin-left: 40px;
+    }
+    
+    .experience-position {
+        font-size: 1.1rem;
+    }
+    
+    .experience-company {
+        font-size: 1rem;
+    }
+    
+    /* Certifications mobile */
+    .certification-card {
+        min-width: 200px;
+        padding: 1.5rem;
+    }
+    
+    .cert-image {
+        height: 120px;
+        font-size: 1.5rem;
+    }
+    
+    /* Contact mobile */
+    .contact-card {
+        padding: 1.5rem;
     }
     
     .social-link {
         width: 40px;
         height: 40px;
     }
+    
+    /* Scroll top button mobile */
+    .scroll-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
 }
 
-/* Medium Devices (tablets, 768px and down) */
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 1rem;
+/* Extra small devices */
+@media (max-width: 360px) {
+    .container {
+        padding: 40px 10px;
     }
     
-    #home {
-        padding-top: 120px;
-        gap: 2rem;
+    .section-heading h2 {
+        font-size: 1.5rem;
     }
     
-    .home-image {
-        margin-top: 2rem;
+    .home-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .home-content h2 {
+        font-size: 1rem;
     }
     
     .profile-img {
-        margin-left: 0;
+        width: 120px;
+        height: 120px;
     }
     
-    .about-content {
-        flex-direction: column;
-        text-align: center;
+    .education-content,
+    .experience-item {
+        padding: 15px 10px;
     }
     
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .certification-card {
+        min-width: 180px;
+        padding: 1rem;
     }
     
-    .contact-info {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .project-card {
+        max-width: 300px;
     }
     
-    /* Education Timeline Mobile */
-    .education-item:nth-child(odd) .education-content::after,
-    .education-item:nth-child(even) .education-content::after {
-        content: '';
-        position: absolute;
-        left: -18px;
-        top: 50%;
-        width: 0;
-        height: 0;
-        border-right: 18px solid rgba(0, 212, 255, 0.4);
-        border-top: 12px solid transparent;
-        border-bottom: 12px solid transparent;
-        transform: translateY(-50%);
-        filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.3));
-    }
-    
-    .education-item:nth-child(odd)::before,
-    .education-item:nth-child(even)::before {
-        content: '';
-        position: absolute;
-        right: calc(100% - 18px);
-        top: 50%;
-        width: 18px;
-        height: 2px;
-        background: linear-gradient(to left, rgba(0, 212, 255, 0.6), rgba(0, 212, 255, 0.2));
-        transform: translateY(-50%);
-        z-index: 1;
+    #contact {
+        padding: 2rem 1rem;
     }
 }
 
-/* Large Devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    .container {
-        padding: 100px 40px;
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    #home {
+        padding-top: 100px;
+        min-height: 100vh;
     }
     
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .home-content h1 {
+        font-size: 2rem;
     }
     
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    .profile-img {
+        width: 180px;
+        height: 180px;
     }
 }
 
-/* Extra Large Devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+/* Fix for very wide screens */
+@media (min-width: 1400px) {
     .container {
         max-width: 1400px;
     }
     
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        max-width: 1200px;
+    .education-timeline,
+    .experience-timeline {
+        max-width: 1000px;
     }
 }
 
-/* Landscape Orientation for Mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-    #home {
+/* Improve button responsiveness */
+@media (max-width: 480px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        width: auto;
+        min-width: 120px;
+    }
+    
+    .cta-buttons {
+        gap: 0.5rem;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Enhanced mobile menu */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
         height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        transition: top 0.3s ease;
+        backdrop-filter: blur(10px);
     }
     
-    .home-content h1 {
-        font-size: 2.2rem;
+    .nav-links.active {
+        top: 0;
+        display: flex;
     }
     
-    .profile-img {
-        width: 250px;
-        height: 250px;
+    .nav-links a {
+        font-size: 1.5rem;
+        margin: 1rem 0;
     }
 }
 
-/* High DPI Screens */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .profile-img img {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
-}
-
-/* Dark Mode Preference */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-    }
-}
-
-/* Reduced Motion Preference */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    .mobile-menu {
+        padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+        justify-content: center;
     }
     
-    .particle {
-        animation: none;
+    .social-link,
+    .social-link1 {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .btn {
+        min-height: 44px;
+    }
+}
+
+/* Fix overflow issues */
+@media (max-width: 768px) {
+    .animated-bg {
+        display: none; /* Hide particles on mobile for performance */
     }
     
     .certifications-slider {
-        animation: none;
+        animation-duration: 30s; /* Slower on mobile */
     }
 }
 
-/* Print Styles */
-@media print {
-    .animated-bg,
-    .particle,
-    nav,
-    .scroll-top {
-        display: none !important;
+/* Improve readability on small screens */
+@media (max-width: 480px) {
+    .education-description,
+    .experience-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
     
-    body {
-        background: white !important;
-        color: black !important;
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
     }
     
-    section {
-        page-break-inside: avoid;
+    .contact-card h4 {
+        font-size: 1.1rem;
     }
 }
