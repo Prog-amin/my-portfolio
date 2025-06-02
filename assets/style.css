@@ -1548,177 +1548,140 @@ section {
     font-size: 14px;
 }
 
-/* Mobile Responsiveness Adjustments */
+/* Mobile Responsiveness Additions */
 @media (max-width: 768px) {
-    /* General adjustments */
-    .container {
-        padding: 40px 15px;
-    }
-    
-    section {
-        padding: 60px 0;
-    }
-    
-    /* Home section */
+    /* Home Section Adjustments */
     #home {
-        flex-direction: column-reverse; /* Image first */
+        flex-direction: column-reverse; /* Puts profile photo first */
+        padding: 120px 20px 60px;
         text-align: center;
-        padding-top: 100px;
-        padding-bottom: 60px;
-        height: auto;
         gap: 2rem;
     }
-    
+
     .home-content {
-        margin-top: 2rem;
+        width: 100%;
     }
-    
+
     .home-image {
-        margin: 0 auto;
+        margin-bottom: 2rem;
     }
-    
+
     .profile-img {
         width: 200px;
         height: 200px;
         margin-left: 0;
     }
-    
+
     .cta-buttons {
         justify-content: center;
         flex-wrap: wrap;
     }
-    
+
     .btn {
         width: auto;
         margin: 0.5rem;
     }
-    
+
     .social-links1 {
         justify-content: center;
     }
-    
-    /* About section */
+
+    /* About Section */
     .about-content {
         flex-direction: column;
         text-align: center;
     }
-    
-    .about-text {
-        text-align: center;
+
+    /* General Section Widths */
+    .container, section {
+        padding-left: 15px;
+        padding-right: 15px;
     }
-    
-    /* Skills section */
+
+    /* Skills Grid */
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
-        padding: 0 10px;
     }
-    
+
     .skill-item {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem;
     }
-    
-    /* Education timeline */
-    .education-timeline::before,
-    .education-timeline::after {
-        left: 30px;
-    }
-    
-    .education-item {
-        padding-left: 60px;
-    }
-    
-    .education-content {
-        width: 100%;
-    }
-    
-    /* Experience timeline */
+
+    /* Education/Experience Timeline */
+    .education-content, 
     .experience-item {
-        margin-left: 60px;
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
     }
-    
-    /* Projects */
+
+    .education-item::after {
+        left: 15px;
+    }
+
+    /* Projects Grid */
     .projects-grid {
         grid-template-columns: 1fr;
-        padding: 0 10px;
     }
-    
-    /* Contact section */
+
+    /* Contact Section */
     .contact-grid {
         grid-template-columns: 1fr;
-        padding: 0 10px;
     }
-    
-    /* Navigation */
-    .nav-container {
-        padding: 0 1rem;
-    }
-    
-    .logo {
-        margin-left: 0;
+
+    /* Prevent full-width buttons */
+    .btn {
+        min-width: 0;
+        padding: 10px 20px;
     }
 }
 
 @media (max-width: 480px) {
     /* Even smaller screens */
-    .home-content h1 {
-        font-size: 2.2rem;
-    }
-    
-    .home-content h2 {
-        font-size: 1.2rem;
-    }
-    
     .skills-grid {
         grid-template-columns: 1fr;
     }
-    
-    .section-heading h2, 
-    .section-headinge h2 {
-        font-size: 1.8rem;
+
+    .home-content h1 {
+        font-size: 2.2rem;
     }
-    
+
+    .home-content h2 {
+        font-size: 1.2rem;
+    }
+
     .profile-img {
         width: 180px;
         height: 180px;
     }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
+
     /* Timeline adjustments */
-    .education-item::after,
-    .experience-item::before {
-        width: 18px;
-        height: 18px;
+    .education-timeline::before,
+    .education-timeline::after {
+        left: 15px;
     }
-    
+
     .education-item {
-        padding-left: 50px;
-    }
-    
-    .experience-item {
-        margin-left: 50px;
+        margin-bottom: 40px;
     }
 }
 
-/* Ensure all sections don't touch the edges */
-section {
-    padding-left: 15px;
-    padding-right: 15px;
+/* Ensure content doesn't touch edges */
+.container, section {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Prevent buttons from stretching full width */
-.cta-buttons .btn {
-    flex: 0 1 auto;
-    min-width: 150px;
-}
+/* Profile image animation adjustment for mobile */
+@media (max-width: 768px) {
+    .profile-img {
+        animation: pulse-mobile 2s ease-in-out infinite;
+    }
 
-/* Center all section content */
-.section-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @keyframes pulse-mobile {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
 }
