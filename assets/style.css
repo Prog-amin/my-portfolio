@@ -1547,3 +1547,223 @@ section {
     color: #666;
     font-size: 14px;
 }
+
+/* Additional Responsive Design Rules */
+
+/* Extra Small Devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .container {
+        padding: 60px 15px;
+    }
+    
+    .home-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .home-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .home-content p {
+        font-size: 1rem;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        margin-left: 0;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        margin: 0 10px;
+    }
+    
+    .contact-grid {
+        gap: 1.5rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Medium Devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    #home {
+        padding-top: 120px;
+        gap: 2rem;
+    }
+    
+    .home-image {
+        margin-top: 2rem;
+    }
+    
+    .profile-img {
+        margin-left: 0;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Education Timeline Mobile */
+    .education-item:nth-child(odd) .education-content::after,
+    .education-item:nth-child(even) .education-content::after {
+        content: '';
+        position: absolute;
+        left: -18px;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border-right: 18px solid rgba(0, 212, 255, 0.4);
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        transform: translateY(-50%);
+        filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.3));
+    }
+    
+    .education-item:nth-child(odd)::before,
+    .education-item:nth-child(even)::before {
+        content: '';
+        position: absolute;
+        right: calc(100% - 18px);
+        top: 50%;
+        width: 18px;
+        height: 2px;
+        background: linear-gradient(to left, rgba(0, 212, 255, 0.6), rgba(0, 212, 255, 0.2));
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        padding: 100px 40px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        max-width: 1200px;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    #home {
+        flex-direction: row;
+        height: 100vh;
+        align-items: center;
+    }
+    
+    .home-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-img img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .particle {
+        animation: none;
+    }
+    
+    .certifications-slider {
+        animation: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .animated-bg,
+    .particle,
+    nav,
+    .scroll-top {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
