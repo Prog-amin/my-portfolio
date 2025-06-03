@@ -1371,11 +1371,11 @@ section {
         display: flex;
     }
     
-    /* Home section - Updated with proper spacing */
+    /* Home section */
     #home {
         flex-direction: column;
         height: auto;
-        padding-top: 120px; /* Increased from 100px to 120px */
+        padding-top: 120px;
         padding-bottom: 60px;
         text-align: center;
     }
@@ -1385,11 +1385,10 @@ section {
         width: 100%;
     }
     
-    /* Profile image with proper spacing */
     .home-image {
         order: -1;
         margin-bottom: 30px;
-        margin-top: 20px; /* Added margin-top */
+        margin-top: 20px;
     }
     
     .profile-img {
@@ -1406,7 +1405,6 @@ section {
         font-size: 1.2rem;
     }
     
-    /* Button fixes */
     .cta-buttons {
         display: flex;
         justify-content: center;
@@ -1421,7 +1419,6 @@ section {
         min-width: 140px;
     }
     
-    /* Social links - Fixed centering */
     .social-links {
         display: flex;
         justify-content: center;
@@ -1431,18 +1428,16 @@ section {
         flex-wrap: wrap;
     }
     
-    .social-link1 {
-        margin: 0;
-    }
-    
-    /* Skills */
+    /* Skills - Two in one row */
     .skills-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
     
     .skill-item {
         padding: 1.5rem 1rem;
+        margin: 0; /* Remove any default margins */
     }
     
     /* Education */
@@ -1499,30 +1494,22 @@ section {
         font-size: 2rem;
     }
     
-    /* Buttons */
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
     /* Footer */
     .copyright {
         margin-top: 20px;
     }
 }
 
-
 @media (max-width: 480px) {
     /* Home section adjustments */
     #home {
-        padding-top: 100px; /* Increased from 80px to 100px */
+        padding-top: 100px;
     }
     
     .profile-img {
         width: 180px;
         height: 180px;
     }
-    
     
     /* Button fixes for small screens */
     .cta-buttons {
@@ -1537,8 +1524,14 @@ section {
         padding: 12px 20px;
     }
     
+    /* Skills - Keep two in one row even on smallest screens */
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem; /* Slightly smaller gap on tiny screens */
+    }
+    
+    .skill-item {
+        padding: 1.2rem 0.8rem; /* Slightly reduced padding */
     }
     
     .section-heading h2,
@@ -1563,10 +1556,8 @@ section {
     }
 }
 
-/* =====================
-   MOBILE RESPONSIVENESS
-   ===================== */
-   @media (max-width: 992px) {
+/* About Section Responsiveness */
+@media (max-width: 992px) {
     #about {
         padding: 3rem 1.5rem;
         margin: 1.5rem;
@@ -1606,7 +1597,7 @@ section {
         padding: 0 10px;
     }
     
-    /* Fixed Contact Info Layout */
+    /* Contact Info Layout */
     .contact-info {
         display: grid;
         grid-template-columns: 1fr;
