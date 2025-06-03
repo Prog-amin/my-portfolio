@@ -322,44 +322,101 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .container {
-                padding: 2rem;
-                margin: 1rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .dropdown {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .swap-btn {
-                transform: rotate(90deg);
-                align-self: center;
-            }
-            
-            .swap-btn:hover {
-                transform: rotate(270deg) scale(1.1);
-            }
-        }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+        border-radius: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h2::after {
+        right: -30px;
+        font-size: 1.2rem;
+    }
+    
+    .amount {
+        margin-bottom: 1.5rem;
+    }
+    
+    .amount input {
+        height: 3rem;
+        font-size: 1rem;
+    }
+    
+    .dropdown {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .swap-btn {
+        transform: rotate(90deg);
+        align-self: center;
+        margin: 0;
+    }
+    
+    .swap-btn:hover {
+        transform: rotate(270deg) scale(1.1);
+    }
+    
+    .msg {
+        margin: 1.5rem 0;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .convert-btn {
+        height: 3rem;
+        font-size: 1rem;
+    }
+    
+    .select-container {
+        padding: 0.8rem;
+    }
+    
+    .select-container img {
+        width: 2rem;
+        height: 1.5rem;
+    }
+    
+    .select-container select {
+        font-size: 0.9rem;
+    }
+}
 
-        /* Success/Error States */
-        .msg.success {
-            background: rgba(34, 197, 94, 0.2);
-            border-color: rgba(34, 197, 94, 0.4);
-            color: #fff;
-        }
-
-        .msg.error {
-            background: rgba(239, 68, 68, 0.2);
-            border-color: rgba(239, 68, 68, 0.4);
-            color: #fff;
-        }
+@media (max-width: 480px) {
+    .container {
+        padding: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h2::after {
+        right: -25px;
+        font-size: 1rem;
+    }
+    
+    .amount p, .from p, .to p {
+        font-size: 0.9rem;
+    }
+    
+    .select-container {
+        padding: 0.6rem;
+    }
+    
+    .msg {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+}
     </style>
 </head>
 <body>
