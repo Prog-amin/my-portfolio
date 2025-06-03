@@ -1387,8 +1387,8 @@ section {
     
     .home-image {
         order: -1;
-        margin-bottom: 15px;
-        margin-top: 20px;
+        margin-bottom: 5px;
+        margin-top: 10px;
     }
     
     .profile-img {
