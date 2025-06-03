@@ -1381,11 +1381,16 @@ section {
     color: #666;
     font-size: 14px;
 }
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     /* General adjustments */
+    body {
+        font-size: 14px;
+    }
+    
     .container {
-        padding: 60px 15px;
+        padding: 40px 15px;
     }
     
     section {
@@ -1403,7 +1408,7 @@ section {
     
     /* Home section */
     #home {
-        flex-direction: column-reverse;
+        flex-direction: column;
         height: auto;
         padding-top: 100px;
         padding-bottom: 60px;
@@ -1415,18 +1420,18 @@ section {
         width: 100%;
     }
     
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 30px;
+    }
+    
     .home-content h1 {
         font-size: 2.5rem;
     }
     
     .home-content h2 {
         font-size: 1.2rem;
-    }
-    
-    .profile-img {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto 30px;
     }
     
     .cta-buttons {
@@ -1437,16 +1442,7 @@ section {
         justify-content: center;
     }
     
-    /* About section */
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-text {
-        text-align: center;
-    }
-    
-    /* Skills section */
+    /* Skills */
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -1456,40 +1452,38 @@ section {
         padding: 1.5rem 1rem;
     }
     
-    /* Education timeline */
+    /* Education */
     .education-timeline::before,
     .education-timeline::after {
         left: 30px;
     }
     
     .education-item {
-        justify-content: flex-start !important;
         margin-bottom: 40px;
+        justify-content: flex-start !important;
     }
     
     .education-content {
-        width: calc(100% - 60px);
+        width: 100%;
         margin-left: 60px;
     }
     
     .education-item::after {
-        left: 30px;
-        transform: translateX(0);
+        left: 28px;
     }
     
-    .education-item:nth-child(odd)::before,
-    .education-item:nth-child(even)::before {
+    .education-item::before {
         display: none;
     }
     
-    /* Experience timeline */
-    .experience-item {
-        margin-left: 60px;
-    }
-    
+    /* Experience */
     .experience-timeline::before,
     .experience-timeline::after {
         left: 30px;
+    }
+    
+    .experience-item {
+        margin-left: 60px;
     }
     
     .experience-item::before {
@@ -1511,6 +1505,17 @@ section {
     .section-headinge h2 {
         font-size: 2rem;
     }
+    
+    /* Buttons */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    .copyright {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1519,13 +1524,13 @@ section {
         font-size: 2rem;
     }
     
-    .home-content h2 {
-        font-size: 1rem;
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
     }
     
     .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        width: 100%;
     }
     
     .skills-grid {
@@ -1545,10 +1550,5 @@ section {
     .education-degree,
     .experience-position {
         font-size: 1.1rem;
-    }
-    
-    .education-school,
-    .experience-company {
-        font-size: 1rem;
     }
 }

@@ -73,10 +73,10 @@
         </a>
         
         <!-- Facebook -->
-        <a href="https://facebook.com/your-profile" class="social-link" target="_blank" rel="noopener noreferrer">
+        <!-- <a href="https://facebook.com/your-profile" class="social-link" target="_blank" rel="noopener noreferrer">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>            </svg>
-        </a>
+        </a> -->
         
         <!-- YouTube -->
         <a href="https://youtube.com/c/your-channel" class="social-link" target="_blank" rel="noopener noreferrer">
@@ -398,7 +398,7 @@
                         <span class="tech-tag">JavaScript</span>
                     </div>
                     <div class="project-buttons">
-                        <a href="https://your-portfolio.site" class="btn btn-primary">Play Now</a>
+                        <a href="https://your-portfolio.site" class="btn btn-primary">Live Website</a>
                         <a href="https://github.com/Prog-amin/my-portfolio" class="btn btn-secondary">GitHub</a>
                     </div>
                 </div>
@@ -410,18 +410,19 @@
                     <i class="fas fa-gamepad"></i>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Mini games</h3>
-                    <p>A set of fun browser-based games with interactive UI, responsive controls, and smooth animations. Designed to demonstrate JavaScript logic and engaging UX.</p>
+                    <h3 class="project-title">Mini Games</h3>
+                    <p>
+                        A set of fun browser-based games with interactive UI, responsive controls, and smooth animations.
+                        Designed to demonstrate JavaScript logic and engaging UX.
+                    </p>
                     <div class="project-tech">
                         <span class="tech-tag">JavaScript</span>
                     </div>
                     <div class="project-buttons">
-                        <a href="https://mini-games.vercel.app" class="btn btn-primary">Play Now</a>
-                        <a href="https://github.com/yourusername/mini-games" class="btn btn-secondary">GitHub</a>
+                        <button class="btn btn-primary" onclick="playRandomGame()">Play Now</button>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -879,6 +880,15 @@
             // Init TypeWriter
             new TypeWriter(txtElement, words, wait);
         }
+        function playRandomGame() {
+    const games = [
+        'assets/MiniProjects/API.html',
+        'assets/MiniProjects/StonePaperScissor.html',
+        'assets/MiniProjects/tictactoe.html'
+    ];
+    const randomIndex = Math.floor(Math.random() * games.length);
+    window.open(games[randomIndex], '_blank');
+}
     </script>
         <!-- Demo Modal -->
         <div id="demoModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);">
