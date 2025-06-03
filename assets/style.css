@@ -1387,7 +1387,7 @@ section {
     
     .home-image {
         order: -1;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
         margin-top: 10px;
     }
     
