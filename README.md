@@ -25,9 +25,9 @@ A responsive and interactive web portfolio showcasing my skills, projects, and p
 ## 📁 Folder Structure
 
 Portfolio/
-├── index.html
-├── style.css
-├── script.js
+└── index.html
+└── style.css
+└── script.js
 └── assets/
 └── images/
 
