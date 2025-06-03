@@ -1274,34 +1274,6 @@ section {
 }
 
 
-.social-links1 {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.social-link1 {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(0, 212, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #e0e0e0;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.social-link1:hover {
-    background: linear-gradient(45deg, #00d4ff, #ff6b6b);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-}
-
 
 .project-card:hover .project-image {
     transform: scale(1.05);
@@ -1405,11 +1377,11 @@ section {
         display: flex;
     }
     
-    /* Home section - Updated with fixed profile photo order */
+    /* Home section - Updated with proper spacing */
     #home {
         flex-direction: column;
         height: auto;
-        padding-top: 100px;
+        padding-top: 120px; /* Increased from 100px to 120px */
         padding-bottom: 60px;
         text-align: center;
     }
@@ -1419,10 +1391,11 @@ section {
         width: 100%;
     }
     
-    /* Explicitly set the image to appear first */
+    /* Profile image with proper spacing */
     .home-image {
         order: -1;
         margin-bottom: 30px;
+        margin-top: 20px; /* Added margin-top */
     }
     
     .profile-img {
@@ -1455,7 +1428,7 @@ section {
     }
     
     /* Social links - Fixed centering */
-    .social-links1 {
+    .social-links {
         display: flex;
         justify-content: center;
         gap: 1rem;
@@ -1544,20 +1517,18 @@ section {
     }
 }
 
+
 @media (max-width: 480px) {
-    /* Even smaller screens */
+    /* Home section adjustments */
     #home {
-        padding-top: 80px;
-    }
-    
-    .home-content h1 {
-        font-size: 2rem;
+        padding-top: 100px; /* Increased from 80px to 100px */
     }
     
     .profile-img {
         width: 180px;
         height: 180px;
     }
+    
     
     /* Button fixes for small screens */
     .cta-buttons {
@@ -1592,7 +1563,7 @@ section {
     }
     
     /* Social links centering fix */
-    .social-links1 {
+    .social-links {
         justify-content: center;
         margin: 1.5rem auto 0;
     }
