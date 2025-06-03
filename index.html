@@ -646,6 +646,60 @@
                 <p class="provider">Udemy</p>
             </a>
         </div>
+        <div class="certification-card">
+            <a href="https://www.coursera.org/learn/generative-ai-with-llms" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-robot"></i> <!-- AI/LLM icon -->
+                </div>
+                <h4>Generative AI with Large Language Models</h4>
+                <p class="provider">AWS & DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://www.udemy.com/course/llm-engineering/" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-cogs"></i> <!-- Engineering/Systems icon -->
+                </div>
+                <h4>LLM Engineering: Master AI, Large Language Models & Agents</h4>
+                <p class="provider">Udemy</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://coursera.org/share/d78b056bd257d785ae445e85fa46db2f" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-comments"></i> <!-- NLP/Conversation icon -->
+                </div>
+                <h4>Natural Language Processing Specialization</h4>
+                <p class="provider">DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://coursera.org/share/bf333ddaade833db170379d193901994" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-brain"></i> <!-- Deep Learning icon -->
+                </div>
+                <h4>Deep Learning Specialization</h4>
+                <p class="provider">DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://coursera.org/share/6b840e127185f8b0702bbf009a00ab14" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-microchip"></i> <!-- Machine Learning icon -->
+                </div>
+                <h4>Machine Learning Specialization</h4>
+                <p class="provider">By Andrew Ng - DeepLearning.AI (via Coursera)</p>
+            </a>
+        </div>
+        <div class="certification-card">
+            <a href="https://www.udemy.com/certificate/UC-28912c15-6f17-4e4e-b711-9ffbe95dbf40/" target="_blank" rel="noopener noreferrer">
+                <div class="cert-image">
+                    <i class="fas fa-code"></i> <!-- Coding/Algorithm icon -->
+                </div>
+                <h4>Master the Coding Interview: Data Structures + Algorithms</h4>
+                <p class="provider">Udemy</p>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -943,95 +997,6 @@
     window.open(games[randomIndex], '_blank');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.certifications-slider');
-    const container = document.querySelector('.certifications-container');
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID = 0;
-    let autoScrollEnabled = true;
-
-    // Start auto-scroll animation
-    slider.classList.add('auto-scroll');
-
-    // Touch events
-    slider.addEventListener('touchstart', touchStart);
-    slider.addEventListener('touchend', touchEnd);
-    slider.addEventListener('touchmove', touchMove);
-
-    // Mouse events
-    slider.addEventListener('mousedown', touchStart);
-    slider.addEventListener('mouseup', touchEnd);
-    slider.addEventListener('mouseleave', touchEnd);
-    slider.addEventListener('mousemove', touchMove);
-
-    function touchStart(e) {
-        if (autoScrollEnabled) {
-            slider.classList.remove('auto-scroll');
-            autoScrollEnabled = false;
-        }
-        
-        isDragging = true;
-        container.classList.add('grabbing');
-        startPos = getPositionX(e);
-        animationID = requestAnimationFrame(animation);
-    }
-
-    function touchEnd() {
-        isDragging = false;
-        container.classList.remove('grabbing');
-        cancelAnimationFrame(animationID);
-        
-        // Reset position if dragged too far
-        const movedBy = currentTranslate - prevTranslate;
-        if (Math.abs(movedBy) < 50) {
-            currentTranslate = prevTranslate;
-        }
-        
-        // Restart auto-scroll after 3 seconds of inactivity
-        setTimeout(() => {
-            if (!isDragging && !autoScrollEnabled) {
-                slider.classList.add('auto-scroll');
-                autoScrollEnabled = true;
-                resetSliderPosition();
-            }
-        }, 3000);
-    }
-
-    function touchMove(e) {
-        if (isDragging) {
-            const currentPosition = getPositionX(e);
-            currentTranslate = prevTranslate + currentPosition - startPos;
-        }
-    }
-
-    function getPositionX(e) {
-        return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-    }
-
-    function animation() {
-        setSliderPosition();
-        if (isDragging) {
-            animationID = requestAnimationFrame(animation);
-        }
-    }
-
-    function setSliderPosition() {
-        slider.style.transform = `translateX(${currentTranslate}px)`;
-    }
-
-    function resetSliderPosition() {
-        // Check if we need to reset position for infinite loop
-        const sliderWidth = slider.scrollWidth / 2;
-        if (Math.abs(currentTranslate) >= sliderWidth) {
-            currentTranslate = 0;
-            prevTranslate = 0;
-            setSliderPosition();
-        }
-    }
-});
     </script>
         <!-- Demo Modal -->
         <div id="demoModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);">
