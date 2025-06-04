@@ -908,19 +908,19 @@ section {
     z-index: -1;
 } */
 
+/* Experience Section - Enhanced Vertical Timeline */
 .experience-timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 0;
 }
-
-/* Enhanced Vertical timeline line for experience - relative to cards */
+/* Enhanced Vertical timeline line for experience - centered like education */
 .experience-timeline::before {
     content: '';
     position: absolute;
-    left: 50px;
-    top: 45px; /* Start relative to first card */
+    left: 50%;
+    top: 0px; /* Start relative to first card */
     height: calc(100% - 120px); /* End relative to last card */
     width: 4px;
     background: linear-gradient(to bottom, 
@@ -930,38 +930,48 @@ section {
         #00d4ff 85%, 
         transparent 100%
     );
+    transform: translateX(-50%);
     border-radius: 2px;
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
 }
-
 /* Progress animation */
 .experience-timeline::after {
     content: '';
     position: absolute;
-    left: 50px;
-    top: 45px;
+    left: 50%;
+    top: 0px;
     height: 0;
     width: 4px;
     background: linear-gradient(to bottom, 
         rgba(255, 107, 107, 0.9) 0%, 
         rgba(0, 212, 255, 0.9) 100%
     );
+    transform: translateX(-50%);
     border-radius: 2px;
     animation: progressLine 4s ease-out forwards;
     animation-delay: 1s;
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
 }
-
 @keyframes progressLine {
     to {
         height: calc(100% - 140px);
     }
 }
-
 .experience-item {
     position: relative;
-    margin-bottom: 50px;
-    margin-left: 80px;
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+.experience-item:nth-child(odd) {
+    justify-content: flex-start;
+}
+.experience-item:nth-child(even) {
+    justify-content: flex-end;
+}
+.experience-content {
+    width: 45%;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     padding: 30px;
@@ -969,66 +979,71 @@ section {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(5px);
 }
-
-/* Enhanced timeline dots for experience */
-.experience-item::before {
+.experience-content::before {
     content: '';
     position: absolute;
-    left: -42px;
-    top: 40px;
-    width: 20px;
-    height: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
     background: linear-gradient(45deg, #00d4ff, #ff6b6b);
-    border-radius: 50%;
-    border: 4px solid rgba(26, 26, 46, 1);
-    z-index: 3;
-    box-shadow: 
-        0 0 15px rgba(0, 212, 255, 0.6),
-        inset 0 1px 2px rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
+    border-radius: 15px 15px 0 0;
 }
-
-.experience-item:hover::before {
-    transform: scale(1.2);
+.experience-content:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: #00d4ff;
     box-shadow: 
-        0 0 25px rgba(0, 212, 255, 0.8),
-        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+        0 25px 50px rgba(0, 212, 255, 0.15),
+        0 0 30px rgba(0, 212, 255, 0.1);
 }
-
-/* Enhanced connecting line from timeline to card */
+/* Enhanced Timeline dots - positioned above the line like education */
 .experience-item::after {
     content: '';
     position: absolute;
-    left: -32px;
-    top: 48px;
-    width: 32px;
-    height: 2px;
-    background: linear-gradient(to right, 
-        rgba(0, 212, 255, 0.8) 0%, 
-        rgba(0, 212, 255, 0.4) 70%, 
-        transparent 100%
-    );
-    z-index: 2;
-    box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
-}
-
-.experience-item:hover {
-    transform: translateY(-5px);
-    border-color: #00d4ff;
+    left: 50%;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(45deg, #00d4ff, #ff6b6b);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid rgba(26, 26, 46, 1);
+    z-index: 3;
     box-shadow: 
-        0 20px 40px rgba(0, 212, 255, 0.15),
-        0 0 30px rgba(0, 212, 255, 0.1);
+        0 0 20px rgba(0, 212, 255, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
-
 .experience-item:hover::after {
-    width: 40px;
-    background: linear-gradient(to right, 
-        rgba(0, 212, 255, 1) 0%, 
-        rgba(0, 212, 255, 0.6) 70%, 
-        transparent 100%
-    );
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 
+        0 0 25px rgba(0, 212, 255, 0.8),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
 }
-
+/* Connection lines from cards to center dot */
+.experience-item:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    right: calc(55% - 25px);
+    top: 50%;
+    width: calc(2% + 10px);
+    height: 2px;
+    background: linear-gradient(to right, rgba(0, 212, 255, 0.6), rgba(0, 212, 255, 0.2));
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.experience-item:nth-child(even)::before {
+    content: '';
+    position: absolute;
+    left: calc(55% - 25px);
+    top: 50%;
+    width: calc(2% + 10px);
+    height: 2px;
+    background: linear-gradient(to left, rgba(0, 212, 255, 0.6), rgba(0, 212, 255, 0.2));
+    transform: translateY(-50%);
+    z-index: 1;
+}
 .experience-date {
     color: #00d4ff;
     font-size: 1rem;
@@ -1038,14 +1053,12 @@ section {
     align-items: center;
     gap: 8px;
 }
-
 .experience-date::before {
     content: '\f073';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     color: #ff6b6b;
 }
-
 .experience-position {
     color: #e0e0e0;
     font-size: 1.3rem;
@@ -1057,14 +1070,12 @@ section {
     align-items: center;
     gap: 10px;
 }
-
 .experience-position::before {
     content: '\f0b1';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     color: #00d4ff;
 }
-
 .experience-company {
     color: #00d4ff;
     font-size: 1.1rem;
@@ -1074,14 +1085,12 @@ section {
     align-items: center;
     gap: 10px;
 }
-
 .experience-company::before {
     content: '\f1ad';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     color: #ff6b6b;
 }
-
 .experience-location {
     color: #999fb3;
     font-size: 0.9rem;
@@ -1091,14 +1100,12 @@ section {
     align-items: center;
     gap: 8px;
 }
-
 .experience-location::before {
     content: '\f3c5';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     color: #00d4ff;
 }
-
 .experience-description {
     color: #999fb3;
     font-size: 0.95rem;
