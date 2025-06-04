@@ -915,27 +915,26 @@ section {
     padding: 40px 0;
 }
 
-/* Experience Timeline Line */
+/* Enhanced Vertical timeline line for experience - relative to cards */
 .experience-timeline::before {
     content: '';
     position: absolute;
     left: 50px;
-    top: 45px;
-    height: calc(100% - 120px);
+    top: 45px; /* Start relative to first card */
+    height: calc(100% - 120px); /* End relative to last card */
     width: 4px;
     background: linear-gradient(to bottom, 
         transparent 0%, 
         #00d4ff 15%, 
         #ff6b6b 50%, 
         #00d4ff 85%, 
-        transparent 100%);
+        transparent 100%
+    );
     border-radius: 2px;
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
-    z-index: 1; /* Ensure line is behind dots */
 }
 
-
-/* Progress animation line - ensure it's behind dots */
+/* Progress animation */
 .experience-timeline::after {
     content: '';
     position: absolute;
@@ -945,12 +944,12 @@ section {
     width: 4px;
     background: linear-gradient(to bottom, 
         rgba(255, 107, 107, 0.9) 0%, 
-        rgba(0, 212, 255, 0.9) 100%);
+        rgba(0, 212, 255, 0.9) 100%
+    );
     border-radius: 2px;
     animation: progressLine 4s ease-out forwards;
     animation-delay: 1s;
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-    z-index: 1; /* Behind dots */
 }
 
 @keyframes progressLine {
@@ -971,24 +970,23 @@ section {
     backdrop-filter: blur(5px);
 }
 
-/* Experience Timeline Dots - Modified to appear above line */
+/* Enhanced timeline dots for experience */
 .experience-item::before {
     content: '';
     position: absolute;
     left: -42px;
     top: 40px;
-    width: 24px; /* Slightly larger */
-    height: 24px;
+    width: 20px;
+    height: 20px;
     background: linear-gradient(45deg, #00d4ff, #ff6b6b);
     border-radius: 50%;
-    border: 5px solid rgba(26, 26, 46, 1);
-    z-index: 3; /* Higher than line */
+    border: 4px solid rgba(26, 26, 46, 1);
+    z-index: 3;
     box-shadow: 
-        0 0 20px rgba(0, 212, 255, 0.5),
-        inset 0 2px 4px rgba(255, 255, 255, 0.2);
-    animation: pulse 2s ease-in-out infinite;
+        0 0 15px rgba(0, 212, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
 }
-
 
 .experience-item:hover::before {
     transform: scale(1.2);
@@ -997,7 +995,7 @@ section {
         inset 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
-/* Connecting line from dot to card */
+/* Enhanced connecting line from timeline to card */
 .experience-item::after {
     content: '';
     position: absolute;
@@ -1008,8 +1006,9 @@ section {
     background: linear-gradient(to right, 
         rgba(0, 212, 255, 0.8) 0%, 
         rgba(0, 212, 255, 0.4) 70%, 
-        transparent 100%);
-    z-index: 2; /* Between dot and timeline line */
+        transparent 100%
+    );
+    z-index: 2;
     box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
 }
 
@@ -1106,7 +1105,6 @@ section {
     line-height: 1.6;
     margin-bottom: 10px;
 }
-
 
 /* Certifications Section */
 #certifications {
