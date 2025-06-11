@@ -30,11 +30,11 @@ Check it out here: [https://prog-amin.github.io/my-portfolio](https://prog-amin.
 ## 📁 Folder Structure
 
 Portfolio/
-└── index.html
-└── style.css
-└── script.js
+├── index.html
+├── style.css
+├── script.js
 └── assets/
-└── images/
+    └── images/
 
 
 ## 📄 License
