@@ -34,8 +34,7 @@ Portfolio/
 ├── style.css
 ├── script.js
 └── assets/
-    └── images/
-
+└── images/
 
 ## 📄 License
 
