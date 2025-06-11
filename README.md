@@ -22,6 +22,11 @@ A responsive and interactive web portfolio showcasing my skills, projects, and p
 
 ---
 
+## 🌐 Live Site
+
+Check it out here: [https://prog-amin.github.io/my-portfolio](https://prog-amin.github.io/my-portfolio)
+
+---
 ## 📁 Folder Structure
 
 Portfolio/
