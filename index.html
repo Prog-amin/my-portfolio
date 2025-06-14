@@ -341,7 +341,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Hotel Booking Management -->
             <div class="project-card">
                 <div class="project-image">
@@ -361,7 +361,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Portfolio -->
             <div class="project-card">
                 <div class="project-image">
@@ -381,7 +381,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Health and Fitness App -->
             <div class="project-card">
                 <div class="project-image">
@@ -460,11 +460,6 @@
                         </div>
                     </div>
                 </div>
-                
-                
-
-
-
                 <!-- Master's Degree -->
                 <div class="education-item">
                     <div class="education-content">
@@ -514,9 +509,6 @@
                     Engineered effective prompts to enhance LLM performance.
                 </div>
             </div>
-
-
-
             <!-- Future Job Seeking -->
             <div class="experience-item">
                 <div class="experience-date">2025 – Present</div>
@@ -793,81 +785,83 @@
             }
         });
         
-        // // Demo modal functionality
-        // function showDemo(projectType) {
-        //     const modal = document.getElementById('demoModal');
-        //     const title = document.getElementById('demoTitle');
-        //     const content = document.getElementById('demoContent');
+        /* 
+        // Demo modal functionality
+        function showDemo(projectType) {
+            const modal = document.getElementById('demoModal');
+            const title = document.getElementById('demoTitle');
+            const content = document.getElementById('demoContent');
             
-        //     const demoData = {
-        //         'health': {
-        //             title: 'E-Commerce Platform Demo',
-        //             content: 'Interactive demo of the e-commerce platform showcasing user registration, product browsing, cart functionality, and secure checkout process.'
-        //         },
-        //         'agent': {
-        //             title: 'Mobile App Design Demo',
-        //             content: 'Prototype demonstration of the mobile app design featuring smooth animations, intuitive navigation, and responsive user interface elements.'
-        //         },
-        //         'restaurant': {
-        //             title: 'Analytics Dashboard Demo',
-        //             content: 'Live demonstration of the analytics dashboard with real-time data visualization, interactive charts, and comprehensive reporting features.'
-        //         },
-        //         'portfolio': {
-        //             title: 'Corporate Website Demo',
-        //             content: 'Walkthrough of the corporate website showcasing responsive design, content management capabilities, and SEO optimization features.'
-        //         },
-        //         'games': {
-        //             title: 'Interactive Game Demo',
-        //             content: 'Gameplay demonstration of the browser-based interactive game featuring engaging mechanics and responsive controls.'
-        //         },
-        //     };
+            const demoData = {
+                'health': {
+                    title: 'E-Commerce Platform Demo',
+                    content: 'Interactive demo of the e-commerce platform showcasing user registration, product browsing, cart functionality, and secure checkout process.'
+                },
+                'agent': {
+                    title: 'Mobile App Design Demo',
+                    content: 'Prototype demonstration of the mobile app design featuring smooth animations, intuitive navigation, and responsive user interface elements.'
+                },
+                'restaurant': {
+                    title: 'Analytics Dashboard Demo',
+                    content: 'Live demonstration of the analytics dashboard with real-time data visualization, interactive charts, and comprehensive reporting features.'
+                },
+                'portfolio': {
+                    title: 'Corporate Website Demo',
+                    content: 'Walkthrough of the corporate website showcasing responsive design, content management capabilities, and SEO optimization features.'
+                },
+                'games': {
+                    title: 'Interactive Game Demo',
+                    content: 'Gameplay demonstration of the browser-based interactive game featuring engaging mechanics and responsive controls.'
+                },
+            };
 
-        //     const demo = demoData[projectType];
-        //     title.textContent = demo.title;
-        //     content.innerHTML = `
-        //         <p style="color: #e0e0e0; margin-bottom: 2rem;">${demo.content}</p>
-        //         <div style="width: 100%; height: 300px; background: linear-gradient(45deg, #00d4ff, #ff6b6b); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; cursor: pointer;" onclick="playDemo()">
-        //             <i class="fas fa-play-circle"></i>
-        //         </div>
-        //         <p style="color: #00d4ff; margin-top: 1rem; font-size: 0.9rem;">Click to play demo video</p>
-        //     `;
+            const demo = demoData[projectType];
+            title.textContent = demo.title;
+            content.innerHTML = `
+                <p style="color: #e0e0e0; margin-bottom: 2rem;">${demo.content}</p>
+                <div style="width: 100%; height: 300px; background: linear-gradient(45deg, #00d4ff, #ff6b6b); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; cursor: pointer;" onclick="playDemo()">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <p style="color: #00d4ff; margin-top: 1rem; font-size: 0.9rem;">Click to play demo video</p>
+            `;
             
-        //     modal.style.display = 'block';
-        // }
+            modal.style.display = 'block';
+        }
 
-        // function playDemo() {
-        //     alert('Demo video would play here. This is a placeholder for the actual video content.');
-        // }
+        function playDemo() {
+            alert('Demo video would play here. This is a placeholder for the actual video content.');
+        }
 
-        // // Close modal functionality
-        // document.querySelector('.close').addEventListener('click', () => {
-        //     document.getElementById('demoModal').style.display = 'none';
-        // });
+        // Close modal functionality
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('demoModal').style.display = 'none';
+        });
 
-        // window.addEventListener('click', (e) => {
-        //     const modal = document.getElementById('demoModal');
-        //     if (e.target === modal) {
-        //         modal.style.display = 'none';
-        //     }
-        // });
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('demoModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
         
-        // // Add animation classes when elements come into view
-        // const animateOnScroll = new IntersectionObserver((entries) => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             entry.target.style.opacity = '1';
-        //             entry.target.style.transform = 'translateY(0)';
-        //         }
-        //     });
-        // }, { threshold: 0.1 });
+        // Add animation classes when elements come into view
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
 
-        // // Apply animation to sections
-        // document.querySelectorAll('.section').forEach(section => {
-        //     section.style.opacity = '0';
-        //     section.style.transform = 'translateY(50px)';
-        //     section.style.transition = 'all 0.8s ease';
-        //     animateOnScroll.observe(section);
-        // });
+        // Apply animation to sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'all 0.8s ease';
+            animateOnScroll.observe(section);
+        }); 
+        */
 
         // Pause certifications slider on hover
         const slider = document.querySelector('.certifications-slider');
@@ -933,41 +927,29 @@
             }
 
             type() {
-                // Current index of word
                 const current = this.wordIndex % this.words.length;
-                // Get full text of current word
                 const fullTxt = this.words[current];
 
-                // Check if deleting
                 if (this.isDeleting) {
-                    // Remove char
                     this.txt = fullTxt.substring(0, this.txt.length - 1);
                 } else {
-                    // Add char
                     this.txt = fullTxt.substring(0, this.txt.length + 1);
                 }
 
-                // Insert txt into element
                 this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
-                // Initial Type Speed
                 let typeSpeed = 100;
 
                 if (this.isDeleting) {
                     typeSpeed /= 2;
                 }
 
-                // If word is complete
                 if (!this.isDeleting && this.txt === fullTxt) {
-                    // Make pause at end
                     typeSpeed = this.wait;
-                    // Set delete to true
                     this.isDeleting = true;
                 } else if (this.isDeleting && this.txt === '') {
                     this.isDeleting = false;
-                    // Move to next word
                     this.wordIndex++;
-                    // Pause before start typing
                     typeSpeed = 500;
                 }
 
@@ -975,7 +957,6 @@
             }
         }
 
-        // Init On DOM Load
         document.addEventListener('DOMContentLoaded', init);
 
         // Init App

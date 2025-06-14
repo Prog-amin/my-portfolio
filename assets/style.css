@@ -1,17 +1,3 @@
-
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-/* body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-    color: #e0e0e0;
-    overflow-x: hidden;
-} */
-
 * {
     margin: 0;
     padding: 0;
@@ -500,7 +486,6 @@ section {
         font-size: 2rem;
     }
 }
-/* Projects Section */
 
 /* Projects Section */
 .projects {
@@ -633,8 +618,8 @@ section {
     content: '';
     position: absolute;
     left: 50%;
-    top: 0px; /* Start relative to first card's center */
-    height: calc(100% - 120px); /* End relative to last card's center */
+    top: 0px; 
+    height: calc(100% - 120px); 
     width: 4px;
     background: linear-gradient(to bottom, 
         transparent 0%, 
@@ -766,9 +751,6 @@ section {
     top: 50%;
     width: 0;
     height: 0;
-    /* border-left: 18px solid rgba(0, 212, 255, 0.4);
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent; */
     transform: translateY(-0%);
     filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.3));
 }
@@ -780,9 +762,6 @@ section {
     top: 50%;
     width: 0;
     height: 0;
-    /* border-right: 18px solid rgba(0, 212, 255, 0.4);
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent; */
     transform: translateY(-50%);
     filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.3));
 }
@@ -920,8 +899,8 @@ section {
     content: '';
     position: absolute;
     left: 50px;
-    top: 45px; /* Start relative to first card */
-    height: calc(100% - 120px); /* End relative to last card */
+    top: 45px; 
+    height: calc(100% - 120px); 
     width: 4px;
     background: linear-gradient(to bottom, 
         transparent 0%, 
@@ -1437,7 +1416,7 @@ section {
     
     .skill-item {
         padding: 1.5rem 1rem;
-        margin: 0; /* Remove any default margins */
+        margin: 0; 
     }
     
     /* Education */
@@ -1527,11 +1506,11 @@ section {
     /* Skills - Keep two in one row even on smallest screens */
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem; /* Slightly smaller gap on tiny screens */
+        gap: 0.8rem;
     }
     
     .skill-item {
-        padding: 1.2rem 0.8rem; /* Slightly reduced padding */
+        padding: 1.2rem 0.8rem; 
     }
     
     .section-heading h2,
