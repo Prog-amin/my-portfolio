@@ -478,21 +478,21 @@ section {
     }
     
     .project-card {
-        width: 90% !important;
-        max-width: 90% !important;
+        width: 90vw !important;
+        max-width: 90vw !important;
         margin: 0 auto !important;
     }
     
     .project-buttons {
         flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: 4% !important;
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
         justify-content: space-between !important;
     }
     
     .project-buttons .btn {
-        flex: 0 0 48% !important;
-        max-width: 48% !important;
+        flex: 1 1 calc(50% - 0.5rem) !important;
+        max-width: calc(50% - 0.5rem) !important;
         margin: 0 !important;
         text-align: center !important;
         box-sizing: border-box !important;
