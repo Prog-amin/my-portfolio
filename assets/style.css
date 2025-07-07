@@ -482,12 +482,14 @@ section {
     }
     
     .project-buttons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.8rem;
+        justify-content: space-between;
     }
     
     .project-buttons .btn {
-        width: 100%;
+        flex: 0 0 48%;
         margin: 0;
         text-align: center;
     }
