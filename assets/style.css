@@ -485,17 +485,15 @@ section {
     
     .project-buttons {
         flex-direction: row !important;
-        flex-wrap: wrap !important;
+        flex-wrap: nowrap !important;
         gap: 1rem !important;
-        justify-content: space-between !important;
+        justify-content: flex-start !important;
     }
     
     .project-buttons .btn {
-        flex: 1 1 calc(50% - 0.5rem) !important;
-        max-width: calc(50% - 0.5rem) !important;
-        margin: 0 !important;
-        text-align: center !important;
+        flex: 0 1 auto !important;
         box-sizing: border-box !important;
+        min-width: 120px;
     }
     
     .skills-grid {
@@ -604,7 +602,8 @@ section {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 
 .btn {
