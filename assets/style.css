@@ -467,7 +467,31 @@ section {
 .vscode { background: linear-gradient(135deg, #007acc, #0099ff); }
 .chatgpt { background: linear-gradient(135deg, #10a37f, #26d0ce); }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .project-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .project-buttons .btn {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1.5rem;
@@ -573,7 +597,7 @@ section {
 .project-buttons {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .btn {
