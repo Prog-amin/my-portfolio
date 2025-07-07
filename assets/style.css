@@ -467,7 +467,7 @@ section {
 .vscode { background: linear-gradient(135deg, #007acc, #0099ff); }
 .chatgpt { background: linear-gradient(135deg, #10a37f, #26d0ce); }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
         padding: 0 5%;
@@ -598,6 +598,7 @@ section {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .btn {
