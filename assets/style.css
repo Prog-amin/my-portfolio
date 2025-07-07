@@ -470,28 +470,32 @@ section {
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        padding: 0 5%;
-        width: 90%;
-        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
     }
     
     .project-card {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
+        width: 90% !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
     }
     
     .project-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        justify-content: space-between;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 4% !important;
+        justify-content: space-between !important;
     }
     
     .project-buttons .btn {
-        flex: 0 0 48%;
-        margin: 0;
-        text-align: center;
+        flex: 0 0 48% !important;
+        max-width: 48% !important;
+        margin: 0 !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
     }
     
     .skills-grid {
